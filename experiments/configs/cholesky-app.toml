@@ -1,0 +1,5 @@
+[app]
+name = "cholesky"
+matrix_size = 10000
+block_size = 1000
+

@@ -1,0 +1,3 @@
+[engine.executor]
+name = "dask"
+workers = 32

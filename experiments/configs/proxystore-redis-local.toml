@@ -1,0 +1,10 @@
+[engine.transformer]
+name = "proxystore"
+
+[engine.transformer.connector]
+kind = "redis"
+options = { hostname = "localhost", port = 6379}
+
+[engine.filter]
+name = "object-size"
+min_size = 10000 

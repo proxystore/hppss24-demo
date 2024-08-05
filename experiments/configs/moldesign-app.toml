@@ -1,0 +1,6 @@
+[app]
+name = "moldesign"
+dataset = "data/moldesign/QM9-search.tsv"
+batch_size = 32
+initial_count = 32
+search_count = 128

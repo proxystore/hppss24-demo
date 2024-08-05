@@ -1,0 +1,26 @@
+name: hppss24
+channels:
+  - pytorch
+  - defaults
+  - conda-forge
+dependencies:
+  - python==3.11.*
+  - redis
+  - pytorch
+  - torchvision
+  - cpuonly
+  - xtb-python==22.1
+  - pip
+  - pip:
+    - ase
+    - matplotlib
+    - numpy
+    - pandas
+    - rdkit==2023.9.6
+    - scikit-learn
+    - torch
+    - torchvision
+    - tqdm
+    - dask[distributed]==2024.7.1
+    - proxystore[extensions,redis]
+    - git+https://github.com/proxystore/taps.git@fe8149db6275dfe4467d4c98d37d37a7931f315e

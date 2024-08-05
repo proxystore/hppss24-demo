@@ -1,0 +1,12 @@
+[app]
+name = "fedlearn"
+batch_size = 64
+clients = 32
+data_dir = "data/fedlearn"
+dataset = "mnist"
+device = "cpu"
+epochs = 3
+participation = 1
+rounds = 3
+test = false
+train = true
