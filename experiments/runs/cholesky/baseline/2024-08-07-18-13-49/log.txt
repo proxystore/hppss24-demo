@@ -1,0 +1,41 @@
+[2024-08-07 18:13:49.630] RUN   (taps.run) :: CLI Arguments: --config configs/cholesky-app.toml configs/dask-local.toml
+[2024-08-07 18:13:49.639] RUN   (taps.run) :: Environment:
+host: x1921c3s4b0n0
+  os: linux (Linux-5.14.21-150400.24.55-default-x86_64-with-glibc2.31)
+  cpu: x86_64 (104 cores / 208 logical)
+  memory: 1171.26 GB
+python:
+  version: 3.11.9
+  build: CPython (64-bit runtime) [GCC 11.2.0]
+  taps: 0.2.1.dev1
+[2024-08-07 18:13:49.641] RUN   (taps.run) :: Starting app (name=cholesky)
+[2024-08-07 18:13:49.641] RUN   (taps.run) :: Configuration:
+app:
+  name: 'cholesky'
+  block_size: 2500
+  matrix_size: 25000
+engine:
+  executor:
+    name: 'dask'
+    daemon_workers: False
+    scheduler: None
+    use_threads: False
+    workers: 32
+  filter:
+    name: 'all'
+  task_record_file_name: 'tasks.jsonl'
+  transformer:
+    name: 'null'
+logging:
+  file_level: 'INFO'
+  file_name: 'log.txt'
+  level: 'INFO'
+run:
+  dir_format: 'runs/{name}/baseline/{timestamp}'
+  env_vars:
+version: '0.2.1.dev1'
+[2024-08-07 18:13:49.641] RUN   (taps.run) :: Runtime directory: /lus/gila/projects/CSC249ADCD08_CNDA/jgpaul/hppss24-proxystore/experiments/runs/cholesky/baseline/2024-08-07-18-13-49
+[2024-08-07 18:14:11.240] APP   (taps.apps.cholesky) :: Generated input matrix: (25000, 25000)
+[2024-08-07 18:14:11.240] APP   (taps.apps.cholesky) :: Block size: 2500
+[2024-08-07 18:15:56.601] APP   (taps.apps.cholesky) :: Output matrix: (25000, 25000)
+[2024-08-07 18:16:10.136] RUN   (taps.run) :: Finished app (name=cholesky, runtime=140.50s, tasks=385)

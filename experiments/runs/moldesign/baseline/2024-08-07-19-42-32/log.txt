@@ -1,0 +1,316 @@
+[2024-08-07 19:42:32.119] RUN   (taps.run) :: CLI Arguments: --config configs/moldesign-app.toml configs/dask-local.toml
+[2024-08-07 19:42:32.128] RUN   (taps.run) :: Environment:
+host: x1921c1s1b0n0
+  os: linux (Linux-5.14.21-150400.24.55-default-x86_64-with-glibc2.31)
+  cpu: x86_64 (104 cores / 208 logical)
+  memory: 1203.53 GB
+python:
+  version: 3.11.9
+  build: CPython (64-bit runtime) [GCC 11.2.0]
+  taps: 0.2.1.dev1
+[2024-08-07 19:42:32.129] RUN   (taps.run) :: Starting app (name=moldesign)
+[2024-08-07 19:42:32.129] RUN   (taps.run) :: Configuration:
+app:
+  name: 'moldesign'
+  batch_size: 32
+  dataset: '/lus/gila/projects/CSC249ADCD08_CNDA/jgpaul/hppss24-proxystore/experiments/data/moldesign/QM9-search.tsv'
+  initial_count: 32
+  search_count: 128
+  seed: 0
+engine:
+  executor:
+    name: 'dask'
+    daemon_workers: False
+    scheduler: None
+    use_threads: False
+    workers: 32
+  filter:
+    name: 'all'
+  task_record_file_name: 'tasks.jsonl'
+  transformer:
+    name: 'null'
+logging:
+  file_level: 'INFO'
+  file_name: 'log.txt'
+  level: 'INFO'
+run:
+  dir_format: 'runs/{name}/baseline/{timestamp}'
+  env_vars:
+    OMP_NUM_THREADS: '1'
+version: '0.2.1.dev1'
+[2024-08-07 19:42:32.129] RUN   (taps.run) :: Runtime directory: /lus/gila/projects/CSC249ADCD08_CNDA/jgpaul/hppss24-proxystore/experiments/runs/moldesign/baseline/2024-08-07-19-42-32
+[2024-08-07 19:42:34.290] APP   (taps.apps.moldesign.app) :: Loaded search space (size=130,258)
+[2024-08-07 19:42:34.297] APP   (taps.apps.moldesign.app) :: Submitted initial computations
+[2024-08-07 19:42:34.298] INFO  (taps.apps.moldesign.app) :: Initial set: ['NC(=O)C12CN1C(=O)C2', 'CC12CCC(C1)C(=O)C2', 'CNC1=NC=NOC1=O', 'C1OC11CCCC1', 'COC12CCC1(O)C2O', 'OC1C=CC=CC=C1', 'CCC(C)C1COCO1', 'COC1=CC(C)=C(N)N1', 'CNC1=C(NC=N1)C=O', 'OCC1CC1OCC#C', 'OC1C=C2CN3C1C23', 'OC1CCC23CC12CO3', 'CCC1=COC=C1OC', 'CC1CCCCC(=O)C1', 'CC12OC3C4C(C14)C23', 'CC1OC2C3C1CC23O', 'OC12COC1C2(O)C=O', 'CC1CC(O)CC(=O)C1', 'O1C=CC2=C1N=CN=C2', 'O=C1OC2CC2(O1)C#C', 'CC1=COC2=C1OC=C2', 'CC(C)(C)CNCC#N', 'CC(O)C1=C(O)N=NO1', 'OC1CC2OCC2=C1', 'OCC(=O)N(C=N)C=N', 'O=C1NC2CC12C1CC1', 'CC1NC(=O)C1C(N)=O', 'CC12CN1CC2CO', 'CC1=NNC=N1', 'CC(O)C1C=CC2NC12', 'CCC#CC(C=O)C#N', 'CC1(CC1)C(C#C)C#N']
+[2024-08-07 19:42:36.399] ERROR (taps.apps.moldesign.app) :: Simulation task failed... submitting new SMILE string
+Traceback (most recent call last):
+  File "/home/jgpaul/.conda/envs/hppss24/lib/python3.11/site-packages/taps/apps/moldesign/app.py", line 96, in run
+    ie = future.result()
+         ^^^^^^^^^^^^^^^
+  File "/home/jgpaul/.conda/envs/hppss24/lib/python3.11/site-packages/taps/engine/_engine.py", line 124, in result
+    task_result = self.future.result(timeout=timeout)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jgpaul/.conda/envs/hppss24/lib/python3.11/site-packages/distributed/client.py", line 405, in result
+    return self.client.sync(self._result, callback_timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jgpaul/.conda/envs/hppss24/lib/python3.11/site-packages/taps/engine/_engine.py", line 183, in _task_done_callback
+    execution_info = future.result().info
+                     ^^^^^^^^^^^^^^^
+  File "/home/jgpaul/.conda/envs/hppss24/lib/python3.11/site-packages/taps/engine/task.py", line 176, in __call__
+    result = self.function(*args, **kwargs)
+    ^^^^^^^^^^^^^^^^^
+  File "/home/jgpaul/.conda/envs/hppss24/lib/python3.11/site-packages/taps/apps/moldesign/chemfunctions.py", line 109, in compute_vertical
+    xyz = generate_initial_xyz(smiles)
+      ^^^^^^^^^^^^^^^^^
+  File "/home/jgpaul/.conda/envs/hppss24/lib/python3.11/site-packages/taps/apps/moldesign/chemfunctions.py", line 62, in generate_initial_xyz
+    AllChem.MMFFOptimizeMolecule(mol)
+      ^^^^^^^^^^^^^^^^^
+ValueError: Bad Conformer Id
+[2024-08-07 19:42:36.495] ERROR (taps.apps.moldesign.app) :: Simulation task failed... submitting new SMILE string
+Traceback (most recent call last):
+  File "/home/jgpaul/.conda/envs/hppss24/lib/python3.11/site-packages/taps/apps/moldesign/app.py", line 96, in run
+    ie = future.result()
+         ^^^^^^^^^^^^^^^
+  File "/home/jgpaul/.conda/envs/hppss24/lib/python3.11/site-packages/taps/engine/_engine.py", line 124, in result
+    task_result = self.future.result(timeout=timeout)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jgpaul/.conda/envs/hppss24/lib/python3.11/site-packages/distributed/client.py", line 405, in result
+    return self.client.sync(self._result, callback_timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jgpaul/.conda/envs/hppss24/lib/python3.11/site-packages/taps/engine/task.py", line 176, in __call__
+    result = self.function(*args, **kwargs)
+    ^^^^^^^^^^^^^^^^^
+  File "/home/jgpaul/.conda/envs/hppss24/lib/python3.11/site-packages/taps/apps/moldesign/chemfunctions.py", line 109, in compute_vertical
+    xyz = generate_initial_xyz(smiles)
+      ^^^^^^^^^^^^^^^^^
+  File "/home/jgpaul/.conda/envs/hppss24/lib/python3.11/site-packages/taps/apps/moldesign/chemfunctions.py", line 62, in generate_initial_xyz
+    AllChem.MMFFOptimizeMolecule(mol)
+      ^^^^^^^^^^^^^^^^^
+ValueError: Bad Conformer Id
+[2024-08-07 19:42:37.187] APP   (taps.apps.moldesign.app) :: Done computing initial set
+[2024-08-07 19:42:37.188] APP   (taps.apps.moldesign.app) :: Created initial training set (size=32)
+[2024-08-07 19:42:37.189] APP   (taps.apps.moldesign.app) :: Submitting inference tasks
+[2024-08-07 19:42:41.284] APP   (taps.apps.moldesign.app) :: Inference results received (size=130258)
+[2024-08-07 19:42:41.312] APP   (taps.apps.moldesign.app) :: Submitted new computations (size=32)
+[2024-08-07 19:42:42.049] ERROR (root) :: Simulation task failed
+Traceback (most recent call last):
+  File "/home/jgpaul/.conda/envs/hppss24/lib/python3.11/site-packages/taps/apps/moldesign/app.py", line 169, in run
+    ie = future.result()
+         ^^^^^^^^^^^^^^^
+  File "/home/jgpaul/.conda/envs/hppss24/lib/python3.11/site-packages/taps/engine/_engine.py", line 124, in result
+    task_result = self.future.result(timeout=timeout)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jgpaul/.conda/envs/hppss24/lib/python3.11/site-packages/distributed/client.py", line 405, in result
+    return self.client.sync(self._result, callback_timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jgpaul/.conda/envs/hppss24/lib/python3.11/site-packages/taps/engine/_engine.py", line 183, in _task_done_callback
+    execution_info = future.result().info
+                     ^^^^^^^^^^^^^^^
+  File "/home/jgpaul/.conda/envs/hppss24/lib/python3.11/site-packages/taps/engine/task.py", line 176, in __call__
+    result = self.function(*args, **kwargs)
+    ^^^^^^^^^^^^^^^^^
+  File "/home/jgpaul/.conda/envs/hppss24/lib/python3.11/site-packages/taps/apps/moldesign/chemfunctions.py", line 109, in compute_vertical
+    xyz = generate_initial_xyz(smiles)
+      ^^^^^^^^^^^^^^^^^
+  File "/home/jgpaul/.conda/envs/hppss24/lib/python3.11/site-packages/taps/apps/moldesign/chemfunctions.py", line 62, in generate_initial_xyz
+    AllChem.MMFFOptimizeMolecule(mol)
+      ^^^^^^^^^^^^^^^^^
+ValueError: Bad Conformer Id
+[2024-08-07 19:42:42.057] ERROR (root) :: Simulation task failed
+Traceback (most recent call last):
+  File "/home/jgpaul/.conda/envs/hppss24/lib/python3.11/site-packages/taps/apps/moldesign/app.py", line 169, in run
+    ie = future.result()
+         ^^^^^^^^^^^^^^^
+  File "/home/jgpaul/.conda/envs/hppss24/lib/python3.11/site-packages/taps/engine/_engine.py", line 124, in result
+    task_result = self.future.result(timeout=timeout)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jgpaul/.conda/envs/hppss24/lib/python3.11/site-packages/distributed/client.py", line 405, in result
+    return self.client.sync(self._result, callback_timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jgpaul/.conda/envs/hppss24/lib/python3.11/site-packages/taps/engine/_engine.py", line 183, in _task_done_callback
+    execution_info = future.result().info
+                     ^^^^^^^^^^^^^^^
+  File "/home/jgpaul/.conda/envs/hppss24/lib/python3.11/site-packages/taps/engine/task.py", line 176, in __call__
+    result = self.function(*args, **kwargs)
+    ^^^^^^^^^^^^^^^^^
+  File "/home/jgpaul/.conda/envs/hppss24/lib/python3.11/site-packages/taps/apps/moldesign/chemfunctions.py", line 109, in compute_vertical
+    xyz = generate_initial_xyz(smiles)
+      ^^^^^^^^^^^^^^^^^
+  File "/home/jgpaul/.conda/envs/hppss24/lib/python3.11/site-packages/taps/apps/moldesign/chemfunctions.py", line 62, in generate_initial_xyz
+    AllChem.MMFFOptimizeMolecule(mol)
+      ^^^^^^^^^^^^^^^^^
+ValueError: Bad Conformer Id
+[2024-08-07 19:42:42.075] ERROR (root) :: Simulation task failed
+Traceback (most recent call last):
+  File "/home/jgpaul/.conda/envs/hppss24/lib/python3.11/site-packages/taps/apps/moldesign/app.py", line 169, in run
+    ie = future.result()
+         ^^^^^^^^^^^^^^^
+  File "/home/jgpaul/.conda/envs/hppss24/lib/python3.11/site-packages/taps/engine/_engine.py", line 124, in result
+    task_result = self.future.result(timeout=timeout)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jgpaul/.conda/envs/hppss24/lib/python3.11/site-packages/distributed/client.py", line 405, in result
+    return self.client.sync(self._result, callback_timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jgpaul/.conda/envs/hppss24/lib/python3.11/site-packages/taps/engine/_engine.py", line 183, in _task_done_callback
+    execution_info = future.result().info
+                     ^^^^^^^^^^^^^^^
+  File "/home/jgpaul/.conda/envs/hppss24/lib/python3.11/site-packages/taps/engine/task.py", line 176, in __call__
+    result = self.function(*args, **kwargs)
+    ^^^^^^^^^^^^^^^^^
+  File "/home/jgpaul/.conda/envs/hppss24/lib/python3.11/site-packages/taps/apps/moldesign/chemfunctions.py", line 109, in compute_vertical
+    xyz = generate_initial_xyz(smiles)
+      ^^^^^^^^^^^^^^^^^
+  File "/home/jgpaul/.conda/envs/hppss24/lib/python3.11/site-packages/taps/apps/moldesign/chemfunctions.py", line 62, in generate_initial_xyz
+    AllChem.MMFFOptimizeMolecule(mol)
+      ^^^^^^^^^^^^^^^^^
+ValueError: Bad Conformer Id
+[2024-08-07 19:42:42.089] ERROR (root) :: Simulation task failed
+Traceback (most recent call last):
+  File "/home/jgpaul/.conda/envs/hppss24/lib/python3.11/site-packages/taps/apps/moldesign/app.py", line 169, in run
+    ie = future.result()
+         ^^^^^^^^^^^^^^^
+  File "/home/jgpaul/.conda/envs/hppss24/lib/python3.11/site-packages/taps/engine/_engine.py", line 124, in result
+    task_result = self.future.result(timeout=timeout)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jgpaul/.conda/envs/hppss24/lib/python3.11/site-packages/distributed/client.py", line 405, in result
+    return self.client.sync(self._result, callback_timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jgpaul/.conda/envs/hppss24/lib/python3.11/site-packages/taps/engine/_engine.py", line 183, in _task_done_callback
+    execution_info = future.result().info
+                     ^^^^^^^^^^^^^^^
+  File "/home/jgpaul/.conda/envs/hppss24/lib/python3.11/site-packages/taps/engine/task.py", line 176, in __call__
+    result = self.function(*args, **kwargs)
+    ^^^^^^^^^^^^^^^^^
+  File "/home/jgpaul/.conda/envs/hppss24/lib/python3.11/site-packages/taps/apps/moldesign/chemfunctions.py", line 109, in compute_vertical
+    xyz = generate_initial_xyz(smiles)
+      ^^^^^^^^^^^^^^^^^
+  File "/home/jgpaul/.conda/envs/hppss24/lib/python3.11/site-packages/taps/apps/moldesign/chemfunctions.py", line 62, in generate_initial_xyz
+    AllChem.MMFFOptimizeMolecule(mol)
+      ^^^^^^^^^^^^^^^^^
+ValueError: Bad Conformer Id
+[2024-08-07 19:42:42.101] ERROR (root) :: Simulation task failed
+Traceback (most recent call last):
+  File "/home/jgpaul/.conda/envs/hppss24/lib/python3.11/site-packages/taps/apps/moldesign/app.py", line 169, in run
+    ie = future.result()
+         ^^^^^^^^^^^^^^^
+  File "/home/jgpaul/.conda/envs/hppss24/lib/python3.11/site-packages/taps/engine/_engine.py", line 124, in result
+    task_result = self.future.result(timeout=timeout)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jgpaul/.conda/envs/hppss24/lib/python3.11/site-packages/distributed/client.py", line 405, in result
+    return self.client.sync(self._result, callback_timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jgpaul/.conda/envs/hppss24/lib/python3.11/site-packages/taps/engine/_engine.py", line 183, in _task_done_callback
+    execution_info = future.result().info
+                     ^^^^^^^^^^^^^^^
+  File "/home/jgpaul/.conda/envs/hppss24/lib/python3.11/site-packages/taps/engine/task.py", line 176, in __call__
+    result = self.function(*args, **kwargs)
+    ^^^^^^^^^^^^^^^^^
+  File "/home/jgpaul/.conda/envs/hppss24/lib/python3.11/site-packages/taps/apps/moldesign/chemfunctions.py", line 109, in compute_vertical
+    xyz = generate_initial_xyz(smiles)
+      ^^^^^^^^^^^^^^^^^
+  File "/home/jgpaul/.conda/envs/hppss24/lib/python3.11/site-packages/taps/apps/moldesign/chemfunctions.py", line 62, in generate_initial_xyz
+    AllChem.MMFFOptimizeMolecule(mol)
+      ^^^^^^^^^^^^^^^^^
+ValueError: Bad Conformer Id
+[2024-08-07 19:42:42.294] APP   (taps.apps.moldesign.app) :: Submitting inference tasks
+[2024-08-07 19:42:46.707] APP   (taps.apps.moldesign.app) :: Inference results received (size=130258)
+[2024-08-07 19:42:46.722] APP   (taps.apps.moldesign.app) :: Submitted new computations (size=32)
+[2024-08-07 19:42:47.040] ERROR (root) :: Simulation task failed
+Traceback (most recent call last):
+  File "/home/jgpaul/.conda/envs/hppss24/lib/python3.11/site-packages/taps/apps/moldesign/app.py", line 169, in run
+    ie = future.result()
+         ^^^^^^^^^^^^^^^
+  File "/home/jgpaul/.conda/envs/hppss24/lib/python3.11/site-packages/taps/engine/_engine.py", line 124, in result
+    task_result = self.future.result(timeout=timeout)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jgpaul/.conda/envs/hppss24/lib/python3.11/site-packages/distributed/client.py", line 405, in result
+    return self.client.sync(self._result, callback_timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jgpaul/.conda/envs/hppss24/lib/python3.11/site-packages/taps/engine/task.py", line 176, in __call__
+    result = self.function(*args, **kwargs)
+    ^^^^^^^^^^^^^^^^^
+  File "/home/jgpaul/.conda/envs/hppss24/lib/python3.11/site-packages/taps/apps/moldesign/chemfunctions.py", line 109, in compute_vertical
+    xyz = generate_initial_xyz(smiles)
+      ^^^^^^^^^^^^^^^^^
+  File "/home/jgpaul/.conda/envs/hppss24/lib/python3.11/site-packages/taps/apps/moldesign/chemfunctions.py", line 62, in generate_initial_xyz
+    AllChem.MMFFOptimizeMolecule(mol)
+      ^^^^^^^^^^^^^^^^^
+ValueError: Bad Conformer Id
+[2024-08-07 19:42:47.828] APP   (taps.apps.moldesign.app) :: Submitting inference tasks
+[2024-08-07 19:42:52.364] APP   (taps.apps.moldesign.app) :: Inference results received (size=130258)
+[2024-08-07 19:42:52.395] APP   (taps.apps.moldesign.app) :: Submitted new computations (size=32)
+[2024-08-07 19:42:52.489] ERROR (root) :: Simulation task failed
+Traceback (most recent call last):
+  File "/home/jgpaul/.conda/envs/hppss24/lib/python3.11/site-packages/taps/apps/moldesign/app.py", line 169, in run
+    ie = future.result()
+         ^^^^^^^^^^^^^^^
+  File "/home/jgpaul/.conda/envs/hppss24/lib/python3.11/site-packages/taps/engine/_engine.py", line 124, in result
+    task_result = self.future.result(timeout=timeout)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jgpaul/.conda/envs/hppss24/lib/python3.11/site-packages/distributed/client.py", line 405, in result
+    return self.client.sync(self._result, callback_timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jgpaul/.conda/envs/hppss24/lib/python3.11/site-packages/taps/engine/_engine.py", line 183, in _task_done_callback
+    execution_info = future.result().info
+                     ^^^^^^^^^^^^^^^
+  File "/home/jgpaul/.conda/envs/hppss24/lib/python3.11/site-packages/taps/engine/task.py", line 176, in __call__
+    result = self.function(*args, **kwargs)
+    ^^^^^^^^^^^^^^^^^
+  File "/home/jgpaul/.conda/envs/hppss24/lib/python3.11/site-packages/taps/apps/moldesign/chemfunctions.py", line 109, in compute_vertical
+    xyz = generate_initial_xyz(smiles)
+      ^^^^^^^^^^^^^^^^^
+  File "/home/jgpaul/.conda/envs/hppss24/lib/python3.11/site-packages/taps/apps/moldesign/chemfunctions.py", line 62, in generate_initial_xyz
+    AllChem.MMFFOptimizeMolecule(mol)
+      ^^^^^^^^^^^^^^^^^
+ValueError: Bad Conformer Id
+[2024-08-07 19:42:52.782] ERROR (root) :: Simulation task failed
+Traceback (most recent call last):
+  File "/home/jgpaul/.conda/envs/hppss24/lib/python3.11/site-packages/taps/apps/moldesign/app.py", line 169, in run
+    ie = future.result()
+         ^^^^^^^^^^^^^^^
+  File "/home/jgpaul/.conda/envs/hppss24/lib/python3.11/site-packages/taps/engine/_engine.py", line 124, in result
+    task_result = self.future.result(timeout=timeout)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jgpaul/.conda/envs/hppss24/lib/python3.11/site-packages/distributed/client.py", line 405, in result
+    return self.client.sync(self._result, callback_timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jgpaul/.conda/envs/hppss24/lib/python3.11/site-packages/taps/engine/_engine.py", line 183, in _task_done_callback
+    execution_info = future.result().info
+                     ^^^^^^^^^^^^^^^
+  File "/home/jgpaul/.conda/envs/hppss24/lib/python3.11/site-packages/taps/engine/task.py", line 176, in __call__
+    result = self.function(*args, **kwargs)
+    ^^^^^^^^^^^^^^^^^
+  File "/home/jgpaul/.conda/envs/hppss24/lib/python3.11/site-packages/taps/apps/moldesign/chemfunctions.py", line 109, in compute_vertical
+    xyz = generate_initial_xyz(smiles)
+      ^^^^^^^^^^^^^^^^^
+  File "/home/jgpaul/.conda/envs/hppss24/lib/python3.11/site-packages/taps/apps/moldesign/chemfunctions.py", line 62, in generate_initial_xyz
+    AllChem.MMFFOptimizeMolecule(mol)
+      ^^^^^^^^^^^^^^^^^
+ValueError: Bad Conformer Id
+[2024-08-07 19:42:52.784] ERROR (root) :: Simulation task failed
+Traceback (most recent call last):
+  File "/home/jgpaul/.conda/envs/hppss24/lib/python3.11/site-packages/taps/apps/moldesign/app.py", line 169, in run
+    ie = future.result()
+         ^^^^^^^^^^^^^^^
+  File "/home/jgpaul/.conda/envs/hppss24/lib/python3.11/site-packages/taps/engine/_engine.py", line 124, in result
+    task_result = self.future.result(timeout=timeout)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jgpaul/.conda/envs/hppss24/lib/python3.11/site-packages/distributed/client.py", line 405, in result
+    return self.client.sync(self._result, callback_timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jgpaul/.conda/envs/hppss24/lib/python3.11/site-packages/taps/engine/task.py", line 176, in __call__
+    result = self.function(*args, **kwargs)
+    ^^^^^^^^^^^^^^^^^
+  File "/home/jgpaul/.conda/envs/hppss24/lib/python3.11/site-packages/taps/apps/moldesign/chemfunctions.py", line 109, in compute_vertical
+    xyz = generate_initial_xyz(smiles)
+      ^^^^^^^^^^^^^^^^^
+  File "/home/jgpaul/.conda/envs/hppss24/lib/python3.11/site-packages/taps/apps/moldesign/chemfunctions.py", line 62, in generate_initial_xyz
+    AllChem.MMFFOptimizeMolecule(mol)
+      ^^^^^^^^^^^^^^^^^
+ValueError: Bad Conformer Id
+[2024-08-07 19:42:53.641] APP   (taps.apps.moldesign.app) :: Submitting inference tasks
+[2024-08-07 19:42:58.256] APP   (taps.apps.moldesign.app) :: Inference results received (size=130258)
+[2024-08-07 19:42:58.274] APP   (taps.apps.moldesign.app) :: Submitted new computations (size=32)
+[2024-08-07 19:42:59.368] APP   (taps.apps.moldesign.app) :: Saved figure to /lus/gila/projects/CSC249ADCD08_CNDA/jgpaul/hppss24-proxystore/experiments/runs/moldesign/baseline/2024-08-07-19-42-32/results.png
+[2024-08-07 19:42:59.378] APP   (taps.apps.moldesign.app) :: Saved results to /lus/gila/projects/CSC249ADCD08_CNDA/jgpaul/hppss24-proxystore/experiments/runs/moldesign/baseline/2024-08-07-19-42-32/results.csv
+[2024-08-07 19:43:00.114] RUN   (taps.run) :: Finished app (name=moldesign, runtime=27.98s, tasks=426)

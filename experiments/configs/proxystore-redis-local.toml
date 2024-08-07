@@ -8,7 +8,7 @@ options = { hostname = "localhost", port = 6379}
 
 [engine.filter]
 name = "object-type"
-patterns = [".*array", "Client", "Result", "DataFrame"]
+patterns = [".*array", "Client", "Result", "Pipeline"]
 
 [run]
 dir_format = "runs/{name}/proxystore/{timestamp}"
