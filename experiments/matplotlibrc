@@ -1,0 +1,29 @@
+# Font sizes
+axes.titlesize: 6
+axes.labelsize: 6
+figure.titlesize: 6
+figure.labelsize: 6
+legend.fontsize: 6
+xtick.labelsize: 6
+ytick.labelsize: 6
+
+# Figure parameters
+axes.linewidth: 0.5
+grid.linewidth: 0.5
+lines.markersize: 3.5
+lines.linewidth: 0.7
+xtick.major.width: 0.5
+xtick.minor.width: 0.5
+ytick.major.width: 0.5
+ytick.minor.width: 0.5
+xtick.major.size: 2
+xtick.minor.size: 2
+ytick.major.size: 2
+ytick.minor.size: 2
+
+# Rendering
+figure.dpi: 400
+savefig.dpi: 400
+savefig.format: png
+savefig.bbox: tight
+savefig.pad_inches: 0
