@@ -3,8 +3,8 @@ name = "proxystore"
 extract_target = true
 
 [engine.transformer.connector]
-kind = "redis"
-options = { hostname = "localhost", port = 6379}
+kind = "file"
+options = { store_dir = "/tmp/proxystore-cache" }
 
 [engine.filter]
 name = "object-type"

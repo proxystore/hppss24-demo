@@ -1,5 +1,5 @@
 [app]
 name = "cholesky"
-matrix_size = 10000
-block_size = 1000
+matrix_size = 25000
+block_size = 2500
 

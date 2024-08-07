@@ -1,3 +1,7 @@
 [engine.executor]
 name = "dask"
+daemon_workers = false
 workers = 32
+
+[run]
+dir_format = "runs/{name}/baseline/{timestamp}"

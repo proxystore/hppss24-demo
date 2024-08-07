@@ -4,3 +4,6 @@ dataset = "data/moldesign/QM9-search.tsv"
 batch_size = 32
 initial_count = 32
 search_count = 128
+
+[run.env_vars]
+OMP_NUM_THREADS = "1"
