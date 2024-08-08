@@ -1,0 +1,64 @@
+[2024-08-08 19:29:27.016] RUN   (taps.run) :: CLI Arguments: --app synthetic --run.dir-format runs/roundtrip/{timestamp} --engine.executor dask --engine.executor.workers 1 --app.structure bag --app.task-count 5 --app.bag-max-running 1 --app.task-data-bytes 10000000 --config configs/proxystore-redis-local.toml
+[2024-08-08 19:29:27.023] RUN   (taps.run) :: Environment:
+host: x1921c3s1b0n0
+  os: linux (Linux-5.14.21-150400.24.55-default-x86_64-with-glibc2.31)
+  cpu: x86_64 (104 cores / 208 logical)
+  memory: 1202.68 GB
+python:
+  version: 3.11.9
+  build: CPython (64-bit runtime) [GCC 11.2.0]
+  taps: 0.2.1.dev1
+[2024-08-08 19:29:27.025] RUN   (taps.run) :: Starting app (name=synthetic)
+[2024-08-08 19:29:27.025] RUN   (taps.run) :: Configuration:
+app:
+  name: 'synthetic'
+  bag_max_running: 1
+  structure: 'bag'
+  task_count: 5
+  task_data_bytes: 10000000
+  task_sleep: 0.0
+  warmup_task: True
+engine:
+  executor:
+    name: 'dask'
+    daemon_workers: True
+    scheduler: None
+    use_threads: False
+    workers: 1
+  filter:
+    name: 'object-size'
+    max_size: inf
+    min_size: 10000
+  task_record_file_name: 'tasks.jsonl'
+  transformer:
+    name: 'proxystore'
+    cache_size: 16
+    connector:
+      kind: 'redis'
+      options:
+        hostname: 'localhost'
+        port: 6379
+    extract_target: False
+    populate_target: True
+logging:
+  file_level: 'INFO'
+  file_name: 'log.txt'
+  level: 'INFO'
+run:
+  dir_format: 'runs/roundtrip/{timestamp}'
+  env_vars:
+version: '0.2.1.dev1'
+[2024-08-08 19:29:27.025] RUN   (taps.run) :: Runtime directory: /lus/gila/projects/CSC249ADCD08_CNDA/jgpaul/hppss24-proxystore/experiments/runs/roundtrip/2024-08-08-19-29-26
+[2024-08-08 19:29:27.631] INFO  (proxystore.store) :: Registered a store named "proxy-transformer"
+[2024-08-08 19:29:27.631] INFO  (proxystore.store.base) :: Initialized Store(name=proxy-transformer, connector=RedisConnector(hostname=localhost, port=6379), serializer=default, deserializer=default, cache_size=16, metrics=False, populate_target=True, auto_register=True)
+[2024-08-08 19:29:27.631] APP   (taps.apps.synthetic) :: Submitting warmup task
+[2024-08-08 19:29:28.291] APP   (taps.apps.synthetic) :: Warmup task completed
+[2024-08-08 19:29:28.291] APP   (taps.apps.synthetic) :: Starting bag workflow
+[2024-08-08 19:29:28.332] APP   (taps.apps.synthetic) :: Submitted 1 initial tasks
+[2024-08-08 19:29:28.450] APP   (taps.apps.synthetic) :: Completed 1/5 tasks (rate: 6.33 tasks/s, running tasks: 1)
+[2024-08-08 19:29:28.536] APP   (taps.apps.synthetic) :: Completed 2/5 tasks (rate: 8.17 tasks/s, running tasks: 1)
+[2024-08-08 19:29:28.621] APP   (taps.apps.synthetic) :: Completed 3/5 tasks (rate: 9.10 tasks/s, running tasks: 1)
+[2024-08-08 19:29:28.703] APP   (taps.apps.synthetic) :: Completed 4/5 tasks (rate: 9.72 tasks/s, running tasks: 1)
+[2024-08-08 19:29:28.771] APP   (taps.apps.synthetic) :: Completed 5/5 (rate: 10.42 tasks/s)
+[2024-08-08 19:29:28.963] INFO  (proxystore.store) :: Unregistered a store named proxy-transformer
+[2024-08-08 19:29:28.966] RUN   (taps.run) :: Finished app (name=synthetic, runtime=1.94s, tasks=6)

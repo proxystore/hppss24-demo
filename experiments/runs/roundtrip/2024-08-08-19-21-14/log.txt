@@ -1,0 +1,51 @@
+[2024-08-08 19:21:14.479] RUN   (taps.run) :: CLI Arguments: --app synthetic --run.dir-format runs/roundtrip/{timestamp} --engine.executor dask --engine.executor.workers 1 --app.structure bag --app.task-count 5 --app.bag-max-running 1 --app.task-data-bytes 10000000
+[2024-08-08 19:21:14.487] RUN   (taps.run) :: Environment:
+host: x1921c3s1b0n0
+  os: linux (Linux-5.14.21-150400.24.55-default-x86_64-with-glibc2.31)
+  cpu: x86_64 (104 cores / 208 logical)
+  memory: 1202.71 GB
+python:
+  version: 3.11.9
+  build: CPython (64-bit runtime) [GCC 11.2.0]
+  taps: 0.2.1.dev1
+[2024-08-08 19:21:14.488] RUN   (taps.run) :: Starting app (name=synthetic)
+[2024-08-08 19:21:14.489] RUN   (taps.run) :: Configuration:
+app:
+  name: 'synthetic'
+  bag_max_running: 1
+  structure: 'bag'
+  task_count: 5
+  task_data_bytes: 10000000
+  task_sleep: 0.0
+  warmup_task: True
+engine:
+  executor:
+    name: 'dask'
+    daemon_workers: True
+    scheduler: None
+    use_threads: False
+    workers: 1
+  filter:
+    name: 'all'
+  task_record_file_name: 'tasks.jsonl'
+  transformer:
+    name: 'null'
+logging:
+  file_level: 'INFO'
+  file_name: 'log.txt'
+  level: 'INFO'
+run:
+  dir_format: 'runs/roundtrip/{timestamp}'
+  env_vars:
+version: '0.2.1.dev1'
+[2024-08-08 19:21:14.489] RUN   (taps.run) :: Runtime directory: /lus/gila/projects/CSC249ADCD08_CNDA/jgpaul/hppss24-proxystore/experiments/runs/roundtrip/2024-08-08-19-21-14
+[2024-08-08 19:21:16.378] APP   (taps.apps.synthetic) :: Submitting warmup task
+[2024-08-08 19:21:18.545] APP   (taps.apps.synthetic) :: Warmup task completed
+[2024-08-08 19:21:18.546] APP   (taps.apps.synthetic) :: Starting bag workflow
+[2024-08-08 19:21:18.614] APP   (taps.apps.synthetic) :: Submitted 1 initial tasks
+[2024-08-08 19:21:18.754] APP   (taps.apps.synthetic) :: Completed 1/5 tasks (rate: 4.82 tasks/s, running tasks: 1)
+[2024-08-08 19:21:18.864] APP   (taps.apps.synthetic) :: Completed 2/5 tasks (rate: 6.30 tasks/s, running tasks: 1)
+[2024-08-08 19:21:18.961] APP   (taps.apps.synthetic) :: Completed 3/5 tasks (rate: 7.23 tasks/s, running tasks: 1)
+[2024-08-08 19:21:19.048] APP   (taps.apps.synthetic) :: Completed 4/5 tasks (rate: 7.98 tasks/s, running tasks: 1)
+[2024-08-08 19:21:19.128] APP   (taps.apps.synthetic) :: Completed 5/5 (rate: 8.60 tasks/s)
+[2024-08-08 19:21:19.316] RUN   (taps.run) :: Finished app (name=synthetic, runtime=4.83s, tasks=6)

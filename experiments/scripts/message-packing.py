@@ -39,7 +39,7 @@ def benchmark(size: int, store: Store[Any] | None) -> (float, float):
     if store is not None:
         store.evict(get_key(data))
 
-    return ser_end - ser_start, de_end, de_start
+    return ser_end - ser_start, de_end - de_start
 
 
 def run(

@@ -6,6 +6,10 @@ extract_target = true
 kind = "redis"
 options = { hostname = "localhost", port = 6379}
 
+# [engine.filter]
+# name = "object-size"
+# min_size = 10000
+
 [engine.filter]
 name = "object-type"
 patterns = [".*array", "Client", "Result", "Pipeline"]

@@ -1,0 +1,105 @@
+{"Tag": "Dask Baseline", "ProxyStore": false, "Message Size": 1000, "Serialize": 0.0018852109787985682, "Deserialize": 4.985590931028128e-05}
+{"Tag": "Dask Baseline", "ProxyStore": false, "Message Size": 1000, "Serialize": 1.9547995179891586e-05, "Deserialize": 1.5202909708023071e-05}
+{"Tag": "Dask Baseline", "ProxyStore": false, "Message Size": 1000, "Serialize": 1.3248994946479797e-05, "Deserialize": 1.1523021385073662e-05}
+{"Tag": "Dask Baseline", "ProxyStore": false, "Message Size": 1000, "Serialize": 1.2106960639357567e-05, "Deserialize": 1.1143041774630547e-05}
+{"Tag": "Dask Baseline", "ProxyStore": false, "Message Size": 1000, "Serialize": 1.0475050657987595e-05, "Deserialize": 9.299954399466515e-06}
+{"Tag": "Dask Baseline", "ProxyStore": false, "Message Size": 10000, "Serialize": 1.378706656396389e-05, "Deserialize": 1.1299969628453255e-05}
+{"Tag": "Dask Baseline", "ProxyStore": false, "Message Size": 10000, "Serialize": 1.0162009857594967e-05, "Deserialize": 8.560018613934517e-06}
+{"Tag": "Dask Baseline", "ProxyStore": false, "Message Size": 10000, "Serialize": 3.1945062801241875e-05, "Deserialize": 2.200400922447443e-05}
+{"Tag": "Dask Baseline", "ProxyStore": false, "Message Size": 10000, "Serialize": 1.278403215110302e-05, "Deserialize": 1.1623953469097614e-05}
+{"Tag": "Dask Baseline", "ProxyStore": false, "Message Size": 10000, "Serialize": 1.1595082469284534e-05, "Deserialize": 1.052801962941885e-05}
+{"Tag": "Dask Baseline", "ProxyStore": false, "Message Size": 100000, "Serialize": 3.0961004085838795e-05, "Deserialize": 2.1066982299089432e-05}
+{"Tag": "Dask Baseline", "ProxyStore": false, "Message Size": 100000, "Serialize": 1.4079967513680458e-05, "Deserialize": 1.287704799324274e-05}
+{"Tag": "Dask Baseline", "ProxyStore": false, "Message Size": 100000, "Serialize": 1.3255979865789413e-05, "Deserialize": 1.3162032701075077e-05}
+{"Tag": "Dask Baseline", "ProxyStore": false, "Message Size": 100000, "Serialize": 1.21330376714468e-05, "Deserialize": 1.2106960639357567e-05}
+{"Tag": "Dask Baseline", "ProxyStore": false, "Message Size": 100000, "Serialize": 1.191697083413601e-05, "Deserialize": 1.2521049939095974e-05}
+{"Tag": "Dask Baseline", "ProxyStore": false, "Message Size": 1000000, "Serialize": 0.0002183739561587572, "Deserialize": 0.0001798119628801942}
+{"Tag": "Dask Baseline", "ProxyStore": false, "Message Size": 1000000, "Serialize": 0.00013289193157106638, "Deserialize": 0.00015148299280554056}
+{"Tag": "Dask Baseline", "ProxyStore": false, "Message Size": 1000000, "Serialize": 0.00012823299039155245, "Deserialize": 0.00014535000082105398}
+{"Tag": "Dask Baseline", "ProxyStore": false, "Message Size": 1000000, "Serialize": 0.00012910296209156513, "Deserialize": 0.00014509097672998905}
+{"Tag": "Dask Baseline", "ProxyStore": false, "Message Size": 1000000, "Serialize": 0.00012542703188955784, "Deserialize": 0.0001422450877726078}
+{"Tag": "Dask Baseline", "ProxyStore": false, "Message Size": 10000000, "Serialize": 0.008192396024242043, "Deserialize": 0.007874691975302994}
+{"Tag": "Dask Baseline", "ProxyStore": false, "Message Size": 10000000, "Serialize": 0.004770979983732104, "Deserialize": 0.004725644015707076}
+{"Tag": "Dask Baseline", "ProxyStore": false, "Message Size": 10000000, "Serialize": 0.0075146210147067904, "Deserialize": 0.004387194057926536}
+{"Tag": "Dask Baseline", "ProxyStore": false, "Message Size": 10000000, "Serialize": 0.00754904595669359, "Deserialize": 0.004364740918390453}
+{"Tag": "Dask Baseline", "ProxyStore": false, "Message Size": 10000000, "Serialize": 0.00760894303675741, "Deserialize": 0.0042940189596265554}
+{"Tag": "Dask Baseline", "ProxyStore": false, "Message Size": 100000000, "Serialize": 0.07000037597026676, "Deserialize": 0.07115870609413832}
+{"Tag": "Dask Baseline", "ProxyStore": false, "Message Size": 100000000, "Serialize": 0.07008670398499817, "Deserialize": 0.06889519502874464}
+{"Tag": "Dask Baseline", "ProxyStore": false, "Message Size": 100000000, "Serialize": 0.06819280900526792, "Deserialize": 0.06988177401944995}
+{"Tag": "Dask Baseline", "ProxyStore": false, "Message Size": 100000000, "Serialize": 0.06883138592820615, "Deserialize": 0.0686487490311265}
+{"Tag": "Dask Baseline", "ProxyStore": false, "Message Size": 100000000, "Serialize": 0.06706836097873747, "Deserialize": 0.06895819201599807}
+{"Tag": "Dask Baseline", "ProxyStore": false, "Message Size": 1000000000, "Serialize": 0.6909662480466068, "Deserialize": 0.6937694179359823}
+{"Tag": "Dask Baseline", "ProxyStore": false, "Message Size": 1000000000, "Serialize": 0.6910596099914983, "Deserialize": 0.6932720799231902}
+{"Tag": "Dask Baseline", "ProxyStore": false, "Message Size": 1000000000, "Serialize": 0.6909223509719595, "Deserialize": 0.691535827005282}
+{"Tag": "Dask Baseline", "ProxyStore": false, "Message Size": 1000000000, "Serialize": 0.6904478740179911, "Deserialize": 0.6914005839498714}
+{"Tag": "Dask Baseline", "ProxyStore": false, "Message Size": 1000000000, "Serialize": 0.6923144758911803, "Deserialize": 0.6914098750567064}
+{"Tag": "w/ ProxyStore (custom)", "ProxyStore": true, "Message Size": 1000, "Serialize": 0.04552093904931098, "Deserialize": 0.0865714659448713}
+{"Tag": "w/ ProxyStore (custom)", "ProxyStore": true, "Message Size": 1000, "Serialize": 0.00022038002498447895, "Deserialize": 0.000194795080460608}
+{"Tag": "w/ ProxyStore (custom)", "ProxyStore": true, "Message Size": 1000, "Serialize": 0.0001448149560019374, "Deserialize": 0.00013304699677973986}
+{"Tag": "w/ ProxyStore (custom)", "ProxyStore": true, "Message Size": 1000, "Serialize": 0.00012071093078702688, "Deserialize": 0.00013551092706620693}
+{"Tag": "w/ ProxyStore (custom)", "ProxyStore": true, "Message Size": 1000, "Serialize": 0.00011281599290668964, "Deserialize": 0.00012026901822537184}
+{"Tag": "w/ ProxyStore (custom)", "ProxyStore": true, "Message Size": 10000, "Serialize": 0.00010822794865816832, "Deserialize": 0.00012222607620060444}
+{"Tag": "w/ ProxyStore (custom)", "ProxyStore": true, "Message Size": 10000, "Serialize": 0.00010685995221138, "Deserialize": 0.00025271193590015173}
+{"Tag": "w/ ProxyStore (custom)", "ProxyStore": true, "Message Size": 10000, "Serialize": 0.00015026901382952929, "Deserialize": 0.0001573750050738454}
+{"Tag": "w/ ProxyStore (custom)", "ProxyStore": true, "Message Size": 10000, "Serialize": 0.0001125080743804574, "Deserialize": 0.00011727202218025923}
+{"Tag": "w/ ProxyStore (custom)", "ProxyStore": true, "Message Size": 10000, "Serialize": 0.0001027469988912344, "Deserialize": 0.00011053401976823807}
+{"Tag": "w/ ProxyStore (custom)", "ProxyStore": true, "Message Size": 100000, "Serialize": 0.00012407300528138876, "Deserialize": 0.0001244059531018138}
+{"Tag": "w/ ProxyStore (custom)", "ProxyStore": true, "Message Size": 100000, "Serialize": 0.00011623208411037922, "Deserialize": 0.0001222860300913453}
+{"Tag": "w/ ProxyStore (custom)", "ProxyStore": true, "Message Size": 100000, "Serialize": 0.0001111089950427413, "Deserialize": 0.00012362294364720583}
+{"Tag": "w/ ProxyStore (custom)", "ProxyStore": true, "Message Size": 100000, "Serialize": 0.00011428305879235268, "Deserialize": 0.0001389399403706193}
+{"Tag": "w/ ProxyStore (custom)", "ProxyStore": true, "Message Size": 100000, "Serialize": 0.00011755898594856262, "Deserialize": 0.00013602105900645256}
+{"Tag": "w/ ProxyStore (custom)", "ProxyStore": true, "Message Size": 1000000, "Serialize": 0.0003604729427024722, "Deserialize": 0.000322605948895216}
+{"Tag": "w/ ProxyStore (custom)", "ProxyStore": true, "Message Size": 1000000, "Serialize": 0.00033569696824997663, "Deserialize": 0.00030617695301771164}
+{"Tag": "w/ ProxyStore (custom)", "ProxyStore": true, "Message Size": 1000000, "Serialize": 0.0011318859178572893, "Deserialize": 0.00033642002381384373}
+{"Tag": "w/ ProxyStore (custom)", "ProxyStore": true, "Message Size": 1000000, "Serialize": 0.0011493340134620667, "Deserialize": 0.0004516509361565113}
+{"Tag": "w/ ProxyStore (custom)", "ProxyStore": true, "Message Size": 1000000, "Serialize": 0.0003529270179569721, "Deserialize": 0.0003080019960179925}
+{"Tag": "w/ ProxyStore (custom)", "ProxyStore": true, "Message Size": 10000000, "Serialize": 0.007985347998328507, "Deserialize": 0.0042757149785757065}
+{"Tag": "w/ ProxyStore (custom)", "ProxyStore": true, "Message Size": 10000000, "Serialize": 0.007908451021648943, "Deserialize": 0.0025433769915252924}
+{"Tag": "w/ ProxyStore (custom)", "ProxyStore": true, "Message Size": 10000000, "Serialize": 0.007890639011748135, "Deserialize": 0.002792462008073926}
+{"Tag": "w/ ProxyStore (custom)", "ProxyStore": true, "Message Size": 10000000, "Serialize": 0.007922895019873977, "Deserialize": 0.002540285000577569}
+{"Tag": "w/ ProxyStore (custom)", "ProxyStore": true, "Message Size": 10000000, "Serialize": 0.008397530065849423, "Deserialize": 0.002561860019341111}
+{"Tag": "w/ ProxyStore (custom)", "ProxyStore": true, "Message Size": 100000000, "Serialize": 0.05462353106122464, "Deserialize": 0.04186590504832566}
+{"Tag": "w/ ProxyStore (custom)", "ProxyStore": true, "Message Size": 100000000, "Serialize": 0.05781431507784873, "Deserialize": 0.041764840949326754}
+{"Tag": "w/ ProxyStore (custom)", "ProxyStore": true, "Message Size": 100000000, "Serialize": 0.05843212699983269, "Deserialize": 0.04190009192097932}
+{"Tag": "w/ ProxyStore (custom)", "ProxyStore": true, "Message Size": 100000000, "Serialize": 0.05790409992914647, "Deserialize": 0.04221100592985749}
+{"Tag": "w/ ProxyStore (custom)", "ProxyStore": true, "Message Size": 100000000, "Serialize": 0.057685812935233116, "Deserialize": 0.0416224820073694}
+{"Tag": "w/ ProxyStore (custom)", "ProxyStore": true, "Message Size": 1000000000, "Serialize": 0.4665654880227521, "Deserialize": 0.418279506964609}
+{"Tag": "w/ ProxyStore (custom)", "ProxyStore": true, "Message Size": 1000000000, "Serialize": 0.4691495989682153, "Deserialize": 0.42420479096472263}
+{"Tag": "w/ ProxyStore (custom)", "ProxyStore": true, "Message Size": 1000000000, "Serialize": 0.47757445997558534, "Deserialize": 0.4213354259263724}
+{"Tag": "w/ ProxyStore (custom)", "ProxyStore": true, "Message Size": 1000000000, "Serialize": 0.4700191000010818, "Deserialize": 0.42135911202058196}
+{"Tag": "w/ ProxyStore (custom)", "ProxyStore": true, "Message Size": 1000000000, "Serialize": 0.4705299779307097, "Deserialize": 0.41242891806177795}
+{"Tag": "w/ ProxyStore (pickle)", "ProxyStore": true, "Message Size": 1000, "Serialize": 0.015214522019959986, "Deserialize": 6.078602746129036e-05}
+{"Tag": "w/ ProxyStore (pickle)", "ProxyStore": true, "Message Size": 1000, "Serialize": 0.00012973893899470568, "Deserialize": 4.021800123155117e-05}
+{"Tag": "w/ ProxyStore (pickle)", "ProxyStore": true, "Message Size": 1000, "Serialize": 0.00011116592213511467, "Deserialize": 3.3926102332770824e-05}
+{"Tag": "w/ ProxyStore (pickle)", "ProxyStore": true, "Message Size": 1000, "Serialize": 0.00010183907579630613, "Deserialize": 4.752504173666239e-05}
+{"Tag": "w/ ProxyStore (pickle)", "ProxyStore": true, "Message Size": 1000, "Serialize": 9.121501352638006e-05, "Deserialize": 3.111304249614477e-05}
+{"Tag": "w/ ProxyStore (pickle)", "ProxyStore": true, "Message Size": 10000, "Serialize": 0.0001040860079228878, "Deserialize": 3.1414907425642014e-05}
+{"Tag": "w/ ProxyStore (pickle)", "ProxyStore": true, "Message Size": 10000, "Serialize": 8.613802492618561e-05, "Deserialize": 2.9326067306101322e-05}
+{"Tag": "w/ ProxyStore (pickle)", "ProxyStore": true, "Message Size": 10000, "Serialize": 0.00010519695933908224, "Deserialize": 3.986095543950796e-05}
+{"Tag": "w/ ProxyStore (pickle)", "ProxyStore": true, "Message Size": 10000, "Serialize": 9.100697934627533e-05, "Deserialize": 3.2570911571383476e-05}
+{"Tag": "w/ ProxyStore (pickle)", "ProxyStore": true, "Message Size": 10000, "Serialize": 8.6985994130373e-05, "Deserialize": 2.8074951842427254e-05}
+{"Tag": "w/ ProxyStore (pickle)", "ProxyStore": true, "Message Size": 100000, "Serialize": 0.00017831299919635057, "Deserialize": 3.277591895312071e-05}
+{"Tag": "w/ ProxyStore (pickle)", "ProxyStore": true, "Message Size": 100000, "Serialize": 8.931208867579699e-05, "Deserialize": 3.17899975925684e-05}
+{"Tag": "w/ ProxyStore (pickle)", "ProxyStore": true, "Message Size": 100000, "Serialize": 8.577900007367134e-05, "Deserialize": 3.228697460144758e-05}
+{"Tag": "w/ ProxyStore (pickle)", "ProxyStore": true, "Message Size": 100000, "Serialize": 8.322310168296099e-05, "Deserialize": 3.178603947162628e-05}
+{"Tag": "w/ ProxyStore (pickle)", "ProxyStore": true, "Message Size": 100000, "Serialize": 8.181598968803883e-05, "Deserialize": 3.189500421285629e-05}
+{"Tag": "w/ ProxyStore (pickle)", "ProxyStore": true, "Message Size": 1000000, "Serialize": 0.0010140379890799522, "Deserialize": 0.00020015996415168047}
+{"Tag": "w/ ProxyStore (pickle)", "ProxyStore": true, "Message Size": 1000000, "Serialize": 0.0003615539753809571, "Deserialize": 0.00015459803398698568}
+{"Tag": "w/ ProxyStore (pickle)", "ProxyStore": true, "Message Size": 1000000, "Serialize": 0.00035326392389833927, "Deserialize": 0.00015235692262649536}
+{"Tag": "w/ ProxyStore (pickle)", "ProxyStore": true, "Message Size": 1000000, "Serialize": 0.00035450002178549767, "Deserialize": 0.00015474401880055666}
+{"Tag": "w/ ProxyStore (pickle)", "ProxyStore": true, "Message Size": 1000000, "Serialize": 0.0003572909627109766, "Deserialize": 0.0001570569584146142}
+{"Tag": "w/ ProxyStore (pickle)", "ProxyStore": true, "Message Size": 10000000, "Serialize": 0.015050773974508047, "Deserialize": 0.007416830980218947}
+{"Tag": "w/ ProxyStore (pickle)", "ProxyStore": true, "Message Size": 10000000, "Serialize": 0.009821209008805454, "Deserialize": 0.0017230029916390777}
+{"Tag": "w/ ProxyStore (pickle)", "ProxyStore": true, "Message Size": 10000000, "Serialize": 0.00826450705062598, "Deserialize": 0.0016909120604395866}
+{"Tag": "w/ ProxyStore (pickle)", "ProxyStore": true, "Message Size": 10000000, "Serialize": 0.007793421042151749, "Deserialize": 0.0016617910005152225}
+{"Tag": "w/ ProxyStore (pickle)", "ProxyStore": true, "Message Size": 10000000, "Serialize": 0.007652582018636167, "Deserialize": 0.0016553769819438457}
+{"Tag": "w/ ProxyStore (pickle)", "ProxyStore": true, "Message Size": 100000000, "Serialize": 0.13500299805309623, "Deserialize": 0.06804643699433655}
+{"Tag": "w/ ProxyStore (pickle)", "ProxyStore": true, "Message Size": 100000000, "Serialize": 0.12787976197432727, "Deserialize": 0.06486953992862254}
+{"Tag": "w/ ProxyStore (pickle)", "ProxyStore": true, "Message Size": 100000000, "Serialize": 0.12459311098791659, "Deserialize": 0.06411802303045988}
+{"Tag": "w/ ProxyStore (pickle)", "ProxyStore": true, "Message Size": 100000000, "Serialize": 0.123047283035703, "Deserialize": 0.06327016104478389}
+{"Tag": "w/ ProxyStore (pickle)", "ProxyStore": true, "Message Size": 100000000, "Serialize": 0.12233923200983554, "Deserialize": 0.06366585299838334}
+{"Tag": "w/ ProxyStore (pickle)", "ProxyStore": true, "Message Size": 1000000000, "Serialize": 1.3849103800021112, "Deserialize": 0.6965476549230516}
+{"Tag": "w/ ProxyStore (pickle)", "ProxyStore": true, "Message Size": 1000000000, "Serialize": 1.3818496640305966, "Deserialize": 0.6960658179596066}
+{"Tag": "w/ ProxyStore (pickle)", "ProxyStore": true, "Message Size": 1000000000, "Serialize": 1.3749067699536681, "Deserialize": 0.6914719730848446}
+{"Tag": "w/ ProxyStore (pickle)", "ProxyStore": true, "Message Size": 1000000000, "Serialize": 1.3759169369004667, "Deserialize": 0.6907120880205184}
+{"Tag": "w/ ProxyStore (pickle)", "ProxyStore": true, "Message Size": 1000000000, "Serialize": 1.3748661360004917, "Deserialize": 0.6911479140399024}

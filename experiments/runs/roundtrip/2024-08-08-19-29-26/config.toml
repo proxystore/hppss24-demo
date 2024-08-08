@@ -1,0 +1,47 @@
+version = "0.2.1.dev1"
+
+[app]
+name = "synthetic"
+structure = "bag"
+task_count = 5
+task_data_bytes = 10000000
+task_sleep = 0.0
+bag_max_running = 1
+warmup_task = true
+
+[engine]
+task_record_file_name = "tasks.jsonl"
+
+[engine.executor]
+name = "dask"
+use_threads = false
+workers = 1
+daemon_workers = true
+
+[engine.filter]
+name = "object-size"
+min_size = 10000
+max_size = inf
+
+[engine.transformer]
+name = "proxystore"
+cache_size = 16
+extract_target = false
+populate_target = true
+
+[engine.transformer.connector]
+kind = "redis"
+
+[engine.transformer.connector.options]
+hostname = "localhost"
+port = 6379
+
+[logging]
+level = "INFO"
+file_level = "INFO"
+file_name = "log.txt"
+
+[run]
+dir_format = "runs/roundtrip/{timestamp}"
+
+[run.env_vars]
