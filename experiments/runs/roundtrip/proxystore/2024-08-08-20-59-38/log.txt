@@ -1,0 +1,158 @@
+[2024-08-08 20:59:38.499] RUN   (taps.run) :: CLI Arguments: --app synthetic --run.dir-format runs/roundtrip/proxystore/{timestamp} --engine.executor dask --engine.executor.workers 1 --app.structure bag --app.task-count 100 --app.bag-max-running 1 --app.task-data-bytes 1000000 --config configs/proxystore-redis-local.toml
+[2024-08-08 20:59:38.506] RUN   (taps.run) :: Environment:
+host: x1921c7s0b0n0
+  os: linux (Linux-5.14.21-150400.24.55-default-x86_64-with-glibc2.31)
+  cpu: x86_64 (104 cores / 208 logical)
+  memory: 1181.41 GB
+python:
+  version: 3.11.9
+  build: CPython (64-bit runtime) [GCC 11.2.0]
+  taps: 0.2.1.dev1
+[2024-08-08 20:59:38.508] RUN   (taps.run) :: Starting app (name=synthetic)
+[2024-08-08 20:59:38.509] RUN   (taps.run) :: Configuration:
+app:
+  name: 'synthetic'
+  bag_max_running: 1
+  structure: 'bag'
+  task_count: 100
+  task_data_bytes: 1000000
+  task_sleep: 0.0
+  warmup_task: True
+engine:
+  executor:
+    name: 'dask'
+    daemon_workers: True
+    scheduler: None
+    use_threads: False
+    workers: 1
+  filter:
+    name: 'object-type'
+    patterns: ['.*array', 'Client', 'Result', 'Pipeline', 'Data']
+  task_record_file_name: 'tasks.jsonl'
+  transformer:
+    name: 'proxystore'
+    cache_size: 16
+    connector:
+      kind: 'redis'
+      options:
+        hostname: 'localhost'
+        port: 6379
+    extract_target: True
+    populate_target: True
+logging:
+  file_level: 'INFO'
+  file_name: 'log.txt'
+  level: 'INFO'
+run:
+  dir_format: 'runs/roundtrip/proxystore/{timestamp}'
+  env_vars:
+version: '0.2.1.dev1'
+[2024-08-08 20:59:38.509] RUN   (taps.run) :: Runtime directory: /lus/gila/projects/CSC249ADCD08_CNDA/jgpaul/hppss24-proxystore/experiments/runs/roundtrip/proxystore/2024-08-08-20-59-38
+[2024-08-08 20:59:39.125] INFO  (proxystore.store) :: Registered a store named "proxy-transformer"
+[2024-08-08 20:59:39.125] INFO  (proxystore.store.base) :: Initialized Store(name=proxy-transformer, connector=RedisConnector(hostname=localhost, port=6379), serializer=default, deserializer=default, cache_size=16, metrics=False, populate_target=True, auto_register=True)
+[2024-08-08 20:59:39.125] APP   (taps.apps.synthetic) :: Submitting warmup task
+[2024-08-08 20:59:39.851] APP   (taps.apps.synthetic) :: Warmup task completed
+[2024-08-08 20:59:39.851] APP   (taps.apps.synthetic) :: Starting bag workflow
+[2024-08-08 20:59:39.856] APP   (taps.apps.synthetic) :: Submitted 1 initial tasks
+[2024-08-08 20:59:39.875] APP   (taps.apps.synthetic) :: Completed 1/100 tasks (rate: 42.45 tasks/s, running tasks: 1)
+[2024-08-08 20:59:39.887] APP   (taps.apps.synthetic) :: Completed 2/100 tasks (rate: 56.64 tasks/s, running tasks: 1)
+[2024-08-08 20:59:39.909] APP   (taps.apps.synthetic) :: Completed 3/100 tasks (rate: 52.09 tasks/s, running tasks: 1)
+[2024-08-08 20:59:39.931] APP   (taps.apps.synthetic) :: Completed 4/100 tasks (rate: 50.26 tasks/s, running tasks: 1)
+[2024-08-08 20:59:39.968] APP   (taps.apps.synthetic) :: Completed 5/100 tasks (rate: 43.15 tasks/s, running tasks: 1)
+[2024-08-08 20:59:39.986] APP   (taps.apps.synthetic) :: Completed 6/100 tasks (rate: 44.71 tasks/s, running tasks: 1)
+[2024-08-08 20:59:40.008] APP   (taps.apps.synthetic) :: Completed 7/100 tasks (rate: 44.93 tasks/s, running tasks: 1)
+[2024-08-08 20:59:40.028] APP   (taps.apps.synthetic) :: Completed 8/100 tasks (rate: 45.38 tasks/s, running tasks: 1)
+[2024-08-08 20:59:40.051] APP   (taps.apps.synthetic) :: Completed 9/100 tasks (rate: 45.26 tasks/s, running tasks: 1)
+[2024-08-08 20:59:40.075] APP   (taps.apps.synthetic) :: Completed 10/100 tasks (rate: 44.88 tasks/s, running tasks: 1)
+[2024-08-08 20:59:40.093] APP   (taps.apps.synthetic) :: Completed 11/100 tasks (rate: 45.59 tasks/s, running tasks: 1)
+[2024-08-08 20:59:40.114] APP   (taps.apps.synthetic) :: Completed 12/100 tasks (rate: 45.75 tasks/s, running tasks: 1)
+[2024-08-08 20:59:40.135] APP   (taps.apps.synthetic) :: Completed 13/100 tasks (rate: 45.94 tasks/s, running tasks: 1)
+[2024-08-08 20:59:40.156] APP   (taps.apps.synthetic) :: Completed 14/100 tasks (rate: 46.03 tasks/s, running tasks: 1)
+[2024-08-08 20:59:40.177] APP   (taps.apps.synthetic) :: Completed 15/100 tasks (rate: 46.16 tasks/s, running tasks: 1)
+[2024-08-08 20:59:40.198] APP   (taps.apps.synthetic) :: Completed 16/100 tasks (rate: 46.23 tasks/s, running tasks: 1)
+[2024-08-08 20:59:40.219] APP   (taps.apps.synthetic) :: Completed 17/100 tasks (rate: 46.26 tasks/s, running tasks: 1)
+[2024-08-08 20:59:40.241] APP   (taps.apps.synthetic) :: Completed 18/100 tasks (rate: 46.28 tasks/s, running tasks: 1)
+[2024-08-08 20:59:40.262] APP   (taps.apps.synthetic) :: Completed 19/100 tasks (rate: 46.34 tasks/s, running tasks: 1)
+[2024-08-08 20:59:40.283] APP   (taps.apps.synthetic) :: Completed 20/100 tasks (rate: 46.41 tasks/s, running tasks: 1)
+[2024-08-08 20:59:40.303] APP   (taps.apps.synthetic) :: Completed 21/100 tasks (rate: 46.49 tasks/s, running tasks: 1)
+[2024-08-08 20:59:40.324] APP   (taps.apps.synthetic) :: Completed 22/100 tasks (rate: 46.55 tasks/s, running tasks: 1)
+[2024-08-08 20:59:40.345] APP   (taps.apps.synthetic) :: Completed 23/100 tasks (rate: 46.61 tasks/s, running tasks: 1)
+[2024-08-08 20:59:40.366] APP   (taps.apps.synthetic) :: Completed 24/100 tasks (rate: 46.67 tasks/s, running tasks: 1)
+[2024-08-08 20:59:40.387] APP   (taps.apps.synthetic) :: Completed 25/100 tasks (rate: 46.69 tasks/s, running tasks: 1)
+[2024-08-08 20:59:40.408] APP   (taps.apps.synthetic) :: Completed 26/100 tasks (rate: 46.72 tasks/s, running tasks: 1)
+[2024-08-08 20:59:40.429] APP   (taps.apps.synthetic) :: Completed 27/100 tasks (rate: 46.76 tasks/s, running tasks: 1)
+[2024-08-08 20:59:40.450] APP   (taps.apps.synthetic) :: Completed 28/100 tasks (rate: 46.79 tasks/s, running tasks: 1)
+[2024-08-08 20:59:40.471] APP   (taps.apps.synthetic) :: Completed 29/100 tasks (rate: 46.82 tasks/s, running tasks: 1)
+[2024-08-08 20:59:40.492] APP   (taps.apps.synthetic) :: Completed 30/100 tasks (rate: 46.83 tasks/s, running tasks: 1)
+[2024-08-08 20:59:40.514] APP   (taps.apps.synthetic) :: Completed 31/100 tasks (rate: 46.83 tasks/s, running tasks: 1)
+[2024-08-08 20:59:40.536] APP   (taps.apps.synthetic) :: Completed 32/100 tasks (rate: 46.79 tasks/s, running tasks: 1)
+[2024-08-08 20:59:40.557] APP   (taps.apps.synthetic) :: Completed 33/100 tasks (rate: 46.77 tasks/s, running tasks: 1)
+[2024-08-08 20:59:40.579] APP   (taps.apps.synthetic) :: Completed 34/100 tasks (rate: 46.77 tasks/s, running tasks: 1)
+[2024-08-08 20:59:40.600] APP   (taps.apps.synthetic) :: Completed 35/100 tasks (rate: 46.78 tasks/s, running tasks: 1)
+[2024-08-08 20:59:40.622] APP   (taps.apps.synthetic) :: Completed 36/100 tasks (rate: 46.76 tasks/s, running tasks: 1)
+[2024-08-08 20:59:40.643] APP   (taps.apps.synthetic) :: Completed 37/100 tasks (rate: 46.76 tasks/s, running tasks: 1)
+[2024-08-08 20:59:40.665] APP   (taps.apps.synthetic) :: Completed 38/100 tasks (rate: 46.71 tasks/s, running tasks: 1)
+[2024-08-08 20:59:40.685] APP   (taps.apps.synthetic) :: Completed 39/100 tasks (rate: 46.79 tasks/s, running tasks: 1)
+[2024-08-08 20:59:40.707] APP   (taps.apps.synthetic) :: Completed 40/100 tasks (rate: 46.78 tasks/s, running tasks: 1)
+[2024-08-08 20:59:40.728] APP   (taps.apps.synthetic) :: Completed 41/100 tasks (rate: 46.78 tasks/s, running tasks: 1)
+[2024-08-08 20:59:40.750] APP   (taps.apps.synthetic) :: Completed 42/100 tasks (rate: 46.75 tasks/s, running tasks: 1)
+[2024-08-08 20:59:40.772] APP   (taps.apps.synthetic) :: Completed 43/100 tasks (rate: 46.74 tasks/s, running tasks: 1)
+[2024-08-08 20:59:40.793] APP   (taps.apps.synthetic) :: Completed 44/100 tasks (rate: 46.72 tasks/s, running tasks: 1)
+[2024-08-08 20:59:40.815] APP   (taps.apps.synthetic) :: Completed 45/100 tasks (rate: 46.72 tasks/s, running tasks: 1)
+[2024-08-08 20:59:40.837] APP   (taps.apps.synthetic) :: Completed 46/100 tasks (rate: 46.70 tasks/s, running tasks: 1)
+[2024-08-08 20:59:40.859] APP   (taps.apps.synthetic) :: Completed 47/100 tasks (rate: 46.68 tasks/s, running tasks: 1)
+[2024-08-08 20:59:40.880] APP   (taps.apps.synthetic) :: Completed 48/100 tasks (rate: 46.66 tasks/s, running tasks: 1)
+[2024-08-08 20:59:40.903] APP   (taps.apps.synthetic) :: Completed 49/100 tasks (rate: 46.63 tasks/s, running tasks: 1)
+[2024-08-08 20:59:40.925] APP   (taps.apps.synthetic) :: Completed 50/100 tasks (rate: 46.60 tasks/s, running tasks: 1)
+[2024-08-08 20:59:40.945] APP   (taps.apps.synthetic) :: Completed 51/100 tasks (rate: 46.65 tasks/s, running tasks: 1)
+[2024-08-08 20:59:40.967] APP   (taps.apps.synthetic) :: Completed 52/100 tasks (rate: 46.61 tasks/s, running tasks: 1)
+[2024-08-08 20:59:40.989] APP   (taps.apps.synthetic) :: Completed 53/100 tasks (rate: 46.59 tasks/s, running tasks: 1)
+[2024-08-08 20:59:41.011] APP   (taps.apps.synthetic) :: Completed 54/100 tasks (rate: 46.58 tasks/s, running tasks: 1)
+[2024-08-08 20:59:41.033] APP   (taps.apps.synthetic) :: Completed 55/100 tasks (rate: 46.55 tasks/s, running tasks: 1)
+[2024-08-08 20:59:41.055] APP   (taps.apps.synthetic) :: Completed 56/100 tasks (rate: 46.54 tasks/s, running tasks: 1)
+[2024-08-08 20:59:41.077] APP   (taps.apps.synthetic) :: Completed 57/100 tasks (rate: 46.52 tasks/s, running tasks: 1)
+[2024-08-08 20:59:41.099] APP   (taps.apps.synthetic) :: Completed 58/100 tasks (rate: 46.49 tasks/s, running tasks: 1)
+[2024-08-08 20:59:41.121] APP   (taps.apps.synthetic) :: Completed 59/100 tasks (rate: 46.48 tasks/s, running tasks: 1)
+[2024-08-08 20:59:41.143] APP   (taps.apps.synthetic) :: Completed 60/100 tasks (rate: 46.48 tasks/s, running tasks: 1)
+[2024-08-08 20:59:41.165] APP   (taps.apps.synthetic) :: Completed 61/100 tasks (rate: 46.46 tasks/s, running tasks: 1)
+[2024-08-08 20:59:41.187] APP   (taps.apps.synthetic) :: Completed 62/100 tasks (rate: 46.44 tasks/s, running tasks: 1)
+[2024-08-08 20:59:41.210] APP   (taps.apps.synthetic) :: Completed 63/100 tasks (rate: 46.38 tasks/s, running tasks: 1)
+[2024-08-08 20:59:41.228] APP   (taps.apps.synthetic) :: Completed 64/100 tasks (rate: 46.49 tasks/s, running tasks: 1)
+[2024-08-08 20:59:41.250] APP   (taps.apps.synthetic) :: Completed 65/100 tasks (rate: 46.48 tasks/s, running tasks: 1)
+[2024-08-08 20:59:41.272] APP   (taps.apps.synthetic) :: Completed 66/100 tasks (rate: 46.48 tasks/s, running tasks: 1)
+[2024-08-08 20:59:41.294] APP   (taps.apps.synthetic) :: Completed 67/100 tasks (rate: 46.47 tasks/s, running tasks: 1)
+[2024-08-08 20:59:41.315] APP   (taps.apps.synthetic) :: Completed 68/100 tasks (rate: 46.47 tasks/s, running tasks: 1)
+[2024-08-08 20:59:41.336] APP   (taps.apps.synthetic) :: Completed 69/100 tasks (rate: 46.48 tasks/s, running tasks: 1)
+[2024-08-08 20:59:41.358] APP   (taps.apps.synthetic) :: Completed 70/100 tasks (rate: 46.46 tasks/s, running tasks: 1)
+[2024-08-08 20:59:41.380] APP   (taps.apps.synthetic) :: Completed 71/100 tasks (rate: 46.44 tasks/s, running tasks: 1)
+[2024-08-08 20:59:41.402] APP   (taps.apps.synthetic) :: Completed 72/100 tasks (rate: 46.44 tasks/s, running tasks: 1)
+[2024-08-08 20:59:41.424] APP   (taps.apps.synthetic) :: Completed 73/100 tasks (rate: 46.42 tasks/s, running tasks: 1)
+[2024-08-08 20:59:41.446] APP   (taps.apps.synthetic) :: Completed 74/100 tasks (rate: 46.42 tasks/s, running tasks: 1)
+[2024-08-08 20:59:41.467] APP   (taps.apps.synthetic) :: Completed 75/100 tasks (rate: 46.43 tasks/s, running tasks: 1)
+[2024-08-08 20:59:41.488] APP   (taps.apps.synthetic) :: Completed 76/100 tasks (rate: 46.43 tasks/s, running tasks: 1)
+[2024-08-08 20:59:41.510] APP   (taps.apps.synthetic) :: Completed 77/100 tasks (rate: 46.43 tasks/s, running tasks: 1)
+[2024-08-08 20:59:41.533] APP   (taps.apps.synthetic) :: Completed 78/100 tasks (rate: 46.40 tasks/s, running tasks: 1)
+[2024-08-08 20:59:41.554] APP   (taps.apps.synthetic) :: Completed 79/100 tasks (rate: 46.42 tasks/s, running tasks: 1)
+[2024-08-08 20:59:41.575] APP   (taps.apps.synthetic) :: Completed 80/100 tasks (rate: 46.42 tasks/s, running tasks: 1)
+[2024-08-08 20:59:41.597] APP   (taps.apps.synthetic) :: Completed 81/100 tasks (rate: 46.42 tasks/s, running tasks: 1)
+[2024-08-08 20:59:41.619] APP   (taps.apps.synthetic) :: Completed 82/100 tasks (rate: 46.41 tasks/s, running tasks: 1)
+[2024-08-08 20:59:41.641] APP   (taps.apps.synthetic) :: Completed 83/100 tasks (rate: 46.40 tasks/s, running tasks: 1)
+[2024-08-08 20:59:41.663] APP   (taps.apps.synthetic) :: Completed 84/100 tasks (rate: 46.38 tasks/s, running tasks: 1)
+[2024-08-08 20:59:41.685] APP   (taps.apps.synthetic) :: Completed 85/100 tasks (rate: 46.38 tasks/s, running tasks: 1)
+[2024-08-08 20:59:41.706] APP   (taps.apps.synthetic) :: Completed 86/100 tasks (rate: 46.37 tasks/s, running tasks: 1)
+[2024-08-08 20:59:41.728] APP   (taps.apps.synthetic) :: Completed 87/100 tasks (rate: 46.38 tasks/s, running tasks: 1)
+[2024-08-08 20:59:41.749] APP   (taps.apps.synthetic) :: Completed 88/100 tasks (rate: 46.37 tasks/s, running tasks: 1)
+[2024-08-08 20:59:41.771] APP   (taps.apps.synthetic) :: Completed 89/100 tasks (rate: 46.37 tasks/s, running tasks: 1)
+[2024-08-08 20:59:41.793] APP   (taps.apps.synthetic) :: Completed 90/100 tasks (rate: 46.35 tasks/s, running tasks: 1)
+[2024-08-08 20:59:41.814] APP   (taps.apps.synthetic) :: Completed 91/100 tasks (rate: 46.36 tasks/s, running tasks: 1)
+[2024-08-08 20:59:41.835] APP   (taps.apps.synthetic) :: Completed 92/100 tasks (rate: 46.38 tasks/s, running tasks: 1)
+[2024-08-08 20:59:41.857] APP   (taps.apps.synthetic) :: Completed 93/100 tasks (rate: 46.39 tasks/s, running tasks: 1)
+[2024-08-08 20:59:41.878] APP   (taps.apps.synthetic) :: Completed 94/100 tasks (rate: 46.38 tasks/s, running tasks: 1)
+[2024-08-08 20:59:41.899] APP   (taps.apps.synthetic) :: Completed 95/100 tasks (rate: 46.39 tasks/s, running tasks: 1)
+[2024-08-08 20:59:41.921] APP   (taps.apps.synthetic) :: Completed 96/100 tasks (rate: 46.39 tasks/s, running tasks: 1)
+[2024-08-08 20:59:41.943] APP   (taps.apps.synthetic) :: Completed 97/100 tasks (rate: 46.39 tasks/s, running tasks: 1)
+[2024-08-08 20:59:41.964] APP   (taps.apps.synthetic) :: Completed 98/100 tasks (rate: 46.39 tasks/s, running tasks: 1)
+[2024-08-08 20:59:41.985] APP   (taps.apps.synthetic) :: Completed 99/100 tasks (rate: 46.40 tasks/s, running tasks: 1)
+[2024-08-08 20:59:42.006] APP   (taps.apps.synthetic) :: Completed 100/100 (rate: 46.41 tasks/s)
+[2024-08-08 20:59:42.204] INFO  (proxystore.store) :: Unregistered a store named proxy-transformer
+[2024-08-08 20:59:42.206] RUN   (taps.run) :: Finished app (name=synthetic, runtime=3.70s, tasks=101)
