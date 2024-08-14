@@ -10,6 +10,7 @@ ytick.labelsize: 6
 # Figure parameters
 axes.linewidth: 0.5
 grid.linewidth: 0.5
+hatch.linewidth: 0.5
 lines.markersize: 3.5
 lines.linewidth: 0.7
 xtick.major.width: 0.5
