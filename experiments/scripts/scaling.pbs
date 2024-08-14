@@ -1,0 +1,55 @@
+#!/bin/bash
+#PBS -A CSC249ADCD08_CNDA
+#PBS -l walltime=00:30:00
+#PBS -N scaling
+
+module load frameworks/2024.1
+conda activate hppss24
+
+WORKERS=104
+
+REDIS_PORT=59465
+redis-server --port $REDIS_PORT --save "" --appendonly no --protected-mode no --maxmemory 0 &> logs/redis.log &
+REDIS_PID=$!
+echo "Redis started on port $REDIS_PORT."
+
+SCHEDULER_PORT=8786
+dask scheduler --port $SCHEDULER_PORT &> logs/scheduler.log &
+SCHEDULER_PID=$!
+echo "Scheduler started on port $SCHEDULER_PORT."
+
+NNODES=$(< $PBS_NODEFILE wc -l)
+
+echo "Starting workers on $NNODES ranks."
+NTOTRANKS=$(( NNODES * WORKERS ))
+mpiexec -np $NTOTRANKS --ppn $WORKERS \
+    dask worker "$(hostname):$SCHEDULER_PORT" --no-nanny --nworkers 1 &> logs/workers.log &
+WORKERS_PID=$!
+
+python -m taps.run \
+    --config configs/scaling.toml \
+    --run.dir-format runs/scaling-noop/baseline/$NTOTRANKS-workers/ \
+    --app.bag-max-running $NTOTRANKS
+
+REDIS_CONFIG="{\"hostname\": \"$(hostname -i)\", \"port\": $REDIS_PORT}"
+python -m taps.run \
+    --config configs/scaling.toml \
+    --run.dir-format "runs/scaling-noop/proxystore/$NTOTRANKS-workers/" \
+    --app.bag-max-running $NTOTRANKS \
+    --engine.transformer proxystore \
+    --engine.transformer.connector.kind redis \
+    --engine.transformer.connector.options "$REDIS_CONFIG"
+
+# python scripts/scaling.py \
+#     --data-size-bytes 1000000 \
+#     --output runs/scaling-results.jsonl \
+#     --scheduler localhost:$SCHEDULER_PORT \
+#     --sleep 0 --tasks 10000 --workers $WORKERS --nodes $NNODES \
+#     --redis-addr localhost:$REDIS_PORT
+
+kill $WORKERS_PID
+kill $SCHEDULER_PID
+echo "Stopped Scheduler."
+kill $REDIS_PID
+echo "Stopped Redis."
+echo "Done."

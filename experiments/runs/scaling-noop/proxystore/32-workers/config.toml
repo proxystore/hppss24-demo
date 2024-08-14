@@ -1,0 +1,48 @@
+version = "0.2.1.dev1"
+
+[app]
+name = "synthetic"
+structure = "bag"
+task_count = 10000
+task_data_bytes = 1000000
+task_sleep = 0.0
+bag_max_running = 32
+warmup_task = true
+
+[engine]
+task_record_file_name = "tasks.jsonl"
+
+[engine.executor]
+name = "dask"
+scheduler = "localhost:8786"
+use_threads = false
+daemon_workers = true
+
+[engine.filter]
+name = "object-type"
+patterns = [
+    "Data",
+]
+
+[engine.transformer]
+name = "proxystore"
+cache_size = 16
+extract_target = false
+populate_target = true
+
+[engine.transformer.connector]
+kind = "redis"
+
+[engine.transformer.connector.options]
+hostname = "x1921c0s2b0n0"
+port = 59465
+
+[logging]
+level = "INFO"
+file_level = "INFO"
+file_name = "log.txt"
+
+[run]
+dir_format = "runs/scaling/proxystore/32-workers/"
+
+[run.env_vars]

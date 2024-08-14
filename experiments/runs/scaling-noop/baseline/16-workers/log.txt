@@ -1,0 +1,104 @@
+[2024-08-14 19:58:51.440] RUN   (taps.run) :: CLI Arguments: --config configs/scaling.toml --run.dir-format runs/scaling/baseline/16-workers/ --app.bag-max-running 16
+[2024-08-14 19:58:51.448] RUN   (taps.run) :: Environment:
+host: x1921c0s2b0n0
+  os: linux (Linux-5.14.21-150400.24.55-default-x86_64-with-glibc2.31)
+  cpu: x86_64 (104 cores / 208 logical)
+  memory: 1197.62 GB
+python:
+  version: 3.11.9
+  build: CPython (64-bit runtime) [GCC 11.2.0]
+  taps: 0.2.1.dev1
+[2024-08-14 19:58:51.449] RUN   (taps.run) :: Starting app (name=synthetic)
+[2024-08-14 19:58:51.450] RUN   (taps.run) :: Configuration:
+app:
+  name: 'synthetic'
+  bag_max_running: 16
+  structure: 'bag'
+  task_count: 10000
+  task_data_bytes: 1000000
+  task_sleep: 0.0
+  warmup_task: True
+engine:
+  executor:
+    name: 'dask'
+    daemon_workers: True
+    scheduler: 'localhost:8786'
+    use_threads: False
+    workers: None
+  filter:
+    name: 'object-type'
+    patterns: ['Data']
+  task_record_file_name: 'tasks.jsonl'
+  transformer:
+    name: 'null'
+logging:
+  file_level: 'INFO'
+  file_name: 'log.txt'
+  level: 'INFO'
+run:
+  dir_format: 'runs/scaling/baseline/16-workers/'
+  env_vars:
+version: '0.2.1.dev1'
+[2024-08-14 19:58:51.450] RUN   (taps.run) :: Runtime directory: /lus/gila/projects/CSC249ADCD08_CNDA/jgpaul/hppss24-proxystore/experiments/runs/scaling/baseline/16-workers
+[2024-08-14 19:58:51.464] APP   (taps.apps.synthetic) :: Submitting warmup task
+[2024-08-14 19:58:52.617] APP   (taps.apps.synthetic) :: Warmup task completed
+[2024-08-14 19:58:52.617] APP   (taps.apps.synthetic) :: Starting bag workflow
+[2024-08-14 19:58:52.687] APP   (taps.apps.synthetic) :: Submitted 16 initial tasks
+[2024-08-14 19:58:52.946] APP   (taps.apps.synthetic) :: Completed 16/10000 tasks (rate: 48.65 tasks/s, running tasks: 16)
+[2024-08-14 19:58:53.203] APP   (taps.apps.synthetic) :: Completed 32/10000 tasks (rate: 54.63 tasks/s, running tasks: 16)
+[2024-08-14 19:58:53.584] APP   (taps.apps.synthetic) :: Completed 112/10000 tasks (rate: 115.83 tasks/s, running tasks: 16)
+[2024-08-14 19:58:55.063] APP   (taps.apps.synthetic) :: Completed 464/10000 tasks (rate: 189.73 tasks/s, running tasks: 16)
+[2024-08-14 19:58:55.536] APP   (taps.apps.synthetic) :: Completed 576/10000 tasks (rate: 197.35 tasks/s, running tasks: 16)
+[2024-08-14 19:58:55.671] APP   (taps.apps.synthetic) :: Completed 608/10000 tasks (rate: 199.13 tasks/s, running tasks: 16)
+[2024-08-14 19:58:56.008] APP   (taps.apps.synthetic) :: Completed 688/10000 tasks (rate: 202.93 tasks/s, running tasks: 16)
+[2024-08-14 19:58:56.480] APP   (taps.apps.synthetic) :: Completed 800/10000 tasks (rate: 207.10 tasks/s, running tasks: 16)
+[2024-08-14 19:58:56.617] APP   (taps.apps.synthetic) :: Completed 832/10000 tasks (rate: 208.03 tasks/s, running tasks: 16)
+[2024-08-14 19:58:58.565] APP   (taps.apps.synthetic) :: Completed 1296/10000 tasks (rate: 217.91 tasks/s, running tasks: 16)
+[2024-08-14 19:58:58.698] APP   (taps.apps.synthetic) :: Completed 1328/10000 tasks (rate: 218.41 tasks/s, running tasks: 16)
+[2024-08-14 19:58:59.234] APP   (taps.apps.synthetic) :: Completed 1456/10000 tasks (rate: 220.06 tasks/s, running tasks: 16)
+[2024-08-14 19:58:59.367] APP   (taps.apps.synthetic) :: Completed 1488/10000 tasks (rate: 220.47 tasks/s, running tasks: 16)
+[2024-08-14 19:58:59.837] APP   (taps.apps.synthetic) :: Completed 1600/10000 tasks (rate: 221.63 tasks/s, running tasks: 16)
+[2024-08-14 19:59:00.105] APP   (taps.apps.synthetic) :: Completed 1664/10000 tasks (rate: 222.22 tasks/s, running tasks: 16)
+[2024-08-14 19:59:01.443] APP   (taps.apps.synthetic) :: Completed 1984/10000 tasks (rate: 224.80 tasks/s, running tasks: 16)
+[2024-08-14 19:59:01.906] APP   (taps.apps.synthetic) :: Completed 2096/10000 tasks (rate: 225.66 tasks/s, running tasks: 16)
+[2024-08-14 19:59:02.771] APP   (taps.apps.synthetic) :: Completed 2304/10000 tasks (rate: 226.92 tasks/s, running tasks: 16)
+[2024-08-14 19:59:03.085] APP   (taps.apps.synthetic) :: Completed 2368/10000 tasks (rate: 226.22 tasks/s, running tasks: 16)
+[2024-08-14 19:59:04.425] APP   (taps.apps.synthetic) :: Completed 2688/10000 tasks (rate: 227.64 tasks/s, running tasks: 16)
+[2024-08-14 19:59:05.163] APP   (taps.apps.synthetic) :: Completed 2864/10000 tasks (rate: 228.28 tasks/s, running tasks: 16)
+[2024-08-14 19:59:05.564] APP   (taps.apps.synthetic) :: Completed 2960/10000 tasks (rate: 228.63 tasks/s, running tasks: 16)
+[2024-08-14 19:59:05.697] APP   (taps.apps.synthetic) :: Completed 2992/10000 tasks (rate: 228.75 tasks/s, running tasks: 16)
+[2024-08-14 19:59:05.963] APP   (taps.apps.synthetic) :: Completed 3056/10000 tasks (rate: 228.98 tasks/s, running tasks: 16)
+[2024-08-14 19:59:07.098] APP   (taps.apps.synthetic) :: Completed 3328/10000 tasks (rate: 229.82 tasks/s, running tasks: 16)
+[2024-08-14 19:59:08.234] APP   (taps.apps.synthetic) :: Completed 3600/10000 tasks (rate: 230.53 tasks/s, running tasks: 16)
+[2024-08-14 19:59:10.644] APP   (taps.apps.synthetic) :: Completed 4176/10000 tasks (rate: 231.65 tasks/s, running tasks: 16)
+[2024-08-14 19:59:12.181] APP   (taps.apps.synthetic) :: Completed 4544/10000 tasks (rate: 232.27 tasks/s, running tasks: 16)
+[2024-08-14 19:59:12.316] APP   (taps.apps.synthetic) :: Completed 4576/10000 tasks (rate: 232.31 tasks/s, running tasks: 16)
+[2024-08-14 19:59:13.449] APP   (taps.apps.synthetic) :: Completed 4848/10000 tasks (rate: 232.73 tasks/s, running tasks: 16)
+[2024-08-14 19:59:13.719] APP   (taps.apps.synthetic) :: Completed 4912/10000 tasks (rate: 232.77 tasks/s, running tasks: 16)
+[2024-08-14 19:59:14.987] APP   (taps.apps.synthetic) :: Completed 5200/10000 tasks (rate: 232.46 tasks/s, running tasks: 16)
+[2024-08-14 19:59:15.655] APP   (taps.apps.synthetic) :: Completed 5360/10000 tasks (rate: 232.66 tasks/s, running tasks: 16)
+[2024-08-14 19:59:15.789] APP   (taps.apps.synthetic) :: Completed 5392/10000 tasks (rate: 232.70 tasks/s, running tasks: 16)
+[2024-08-14 19:59:16.055] APP   (taps.apps.synthetic) :: Completed 5456/10000 tasks (rate: 232.79 tasks/s, running tasks: 16)
+[2024-08-14 19:59:18.988] APP   (taps.apps.synthetic) :: Completed 6160/10000 tasks (rate: 233.59 tasks/s, running tasks: 16)
+[2024-08-14 19:59:19.123] APP   (taps.apps.synthetic) :: Completed 6192/10000 tasks (rate: 233.61 tasks/s, running tasks: 16)
+[2024-08-14 19:59:19.257] APP   (taps.apps.synthetic) :: Completed 6224/10000 tasks (rate: 233.64 tasks/s, running tasks: 16)
+[2024-08-14 19:59:19.924] APP   (taps.apps.synthetic) :: Completed 6384/10000 tasks (rate: 233.79 tasks/s, running tasks: 16)
+[2024-08-14 19:59:20.056] APP   (taps.apps.synthetic) :: Completed 6416/10000 tasks (rate: 233.83 tasks/s, running tasks: 16)
+[2024-08-14 19:59:20.660] APP   (taps.apps.synthetic) :: Completed 6560/10000 tasks (rate: 233.93 tasks/s, running tasks: 16)
+[2024-08-14 19:59:21.191] APP   (taps.apps.synthetic) :: Completed 6688/10000 tasks (rate: 234.06 tasks/s, running tasks: 16)
+[2024-08-14 19:59:22.857] APP   (taps.apps.synthetic) :: Completed 7088/10000 tasks (rate: 234.40 tasks/s, running tasks: 16)
+[2024-08-14 19:59:23.122] APP   (taps.apps.synthetic) :: Completed 7152/10000 tasks (rate: 234.46 tasks/s, running tasks: 16)
+[2024-08-14 19:59:23.387] APP   (taps.apps.synthetic) :: Completed 7216/10000 tasks (rate: 234.52 tasks/s, running tasks: 16)
+[2024-08-14 19:59:24.856] APP   (taps.apps.synthetic) :: Completed 7568/10000 tasks (rate: 234.75 tasks/s, running tasks: 16)
+[2024-08-14 19:59:24.990] APP   (taps.apps.synthetic) :: Completed 7600/10000 tasks (rate: 234.77 tasks/s, running tasks: 16)
+[2024-08-14 19:59:25.857] APP   (taps.apps.synthetic) :: Completed 7808/10000 tasks (rate: 234.90 tasks/s, running tasks: 16)
+[2024-08-14 19:59:27.127] APP   (taps.apps.synthetic) :: Completed 8096/10000 tasks (rate: 234.60 tasks/s, running tasks: 16)
+[2024-08-14 19:59:28.125] APP   (taps.apps.synthetic) :: Completed 8336/10000 tasks (rate: 234.77 tasks/s, running tasks: 16)
+[2024-08-14 19:59:28.335] APP   (taps.apps.synthetic) :: Completed 8384/10000 tasks (rate: 234.73 tasks/s, running tasks: 16)
+[2024-08-14 19:59:30.532] APP   (taps.apps.synthetic) :: Completed 8912/10000 tasks (rate: 235.05 tasks/s, running tasks: 16)
+[2024-08-14 19:59:31.399] APP   (taps.apps.synthetic) :: Completed 9120/10000 tasks (rate: 235.16 tasks/s, running tasks: 16)
+[2024-08-14 19:59:31.997] APP   (taps.apps.synthetic) :: Completed 9264/10000 tasks (rate: 235.25 tasks/s, running tasks: 16)
+[2024-08-14 19:59:33.992] APP   (taps.apps.synthetic) :: Completed 9744/10000 tasks (rate: 235.50 tasks/s, running tasks: 16)
+[2024-08-14 19:59:34.124] APP   (taps.apps.synthetic) :: Completed 9776/10000 tasks (rate: 235.53 tasks/s, running tasks: 16)
+[2024-08-14 19:59:35.055] APP   (taps.apps.synthetic) :: Completed 10002/10000 (rate: 235.69 tasks/s)
+[2024-08-14 19:59:49.856] RUN   (taps.run) :: Finished app (name=synthetic, runtime=58.41s, tasks=10003)
