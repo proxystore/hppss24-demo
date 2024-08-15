@@ -33,6 +33,6 @@ file_level = "INFO"
 file_name = "log.txt"
 
 [run]
-dir_format = "runs/scaling/baseline/208-workers/"
+dir_format = "runs/scaling-noop/baseline/208-workers/"
 
 [run.env_vars]

@@ -1,15 +1,15 @@
-[2024-08-14 20:12:45.724] RUN   (taps.run) :: CLI Arguments: --config configs/scaling.toml --run.dir-format runs/scaling/baseline/208-workers/ --app.bag-max-running 208
-[2024-08-14 20:12:45.735] RUN   (taps.run) :: Environment:
-host: x1921c1s1b0n0
+[2024-08-15 19:04:07.050] RUN   (taps.run) :: CLI Arguments: --config configs/scaling.toml --run.dir-format runs/scaling-noop/baseline/208-workers/ --app.bag-max-running 208
+[2024-08-15 19:04:07.060] RUN   (taps.run) :: Environment:
+host: x1922c7s3b0n0
   os: linux (Linux-5.14.21-150400.24.55-default-x86_64-with-glibc2.31)
   cpu: x86_64 (104 cores / 208 logical)
-  memory: 1192.26 GB
+  memory: 1194.06 GB
 python:
   version: 3.11.9
   build: CPython (64-bit runtime) [GCC 11.2.0]
   taps: 0.2.1.dev1
-[2024-08-14 20:12:45.737] RUN   (taps.run) :: Starting app (name=synthetic)
-[2024-08-14 20:12:45.738] RUN   (taps.run) :: Configuration:
+[2024-08-15 19:04:07.061] RUN   (taps.run) :: Starting app (name=synthetic)
+[2024-08-15 19:04:07.061] RUN   (taps.run) :: Configuration:
 app:
   name: 'synthetic'
   bag_max_running: 208
@@ -36,13 +36,14 @@ logging:
   file_name: 'log.txt'
   level: 'INFO'
 run:
-  dir_format: 'runs/scaling/baseline/208-workers/'
+  dir_format: 'runs/scaling-noop/baseline/208-workers/'
   env_vars:
 version: '0.2.1.dev1'
-[2024-08-14 20:12:45.738] RUN   (taps.run) :: Runtime directory: /lus/gila/projects/CSC249ADCD08_CNDA/jgpaul/hppss24-proxystore/experiments/runs/scaling/baseline/208-workers
-[2024-08-14 20:12:45.763] APP   (taps.apps.synthetic) :: Submitting warmup task
-[2024-08-14 20:12:57.856] APP   (taps.apps.synthetic) :: Warmup task completed
-[2024-08-14 20:12:57.856] APP   (taps.apps.synthetic) :: Starting bag workflow
-[2024-08-14 20:12:59.112] APP   (taps.apps.synthetic) :: Submitted 208 initial tasks
-[2024-08-14 20:13:58.366] APP   (taps.apps.synthetic) :: Completed 10029/10000 (rate: 165.74 tasks/s)
-[2024-08-14 20:15:04.755] RUN   (taps.run) :: Finished app (name=synthetic, runtime=139.02s, tasks=10030)
+[2024-08-15 19:04:07.062] RUN   (taps.run) :: Runtime directory: /lus/gila/projects/CSC249ADCD08_CNDA/jgpaul/hppss24-proxystore-demo/experiments/runs/scaling-noop/baseline/208-workers
+[2024-08-15 19:04:07.089] APP   (taps.apps.synthetic) :: Submitting warmup task
+[2024-08-15 19:04:21.117] APP   (taps.apps.synthetic) :: Warmup task completed
+[2024-08-15 19:04:21.118] APP   (taps.apps.synthetic) :: Starting bag workflow
+[2024-08-15 19:04:22.300] APP   (taps.apps.synthetic) :: Submitted 208 initial tasks
+[2024-08-15 19:05:08.151] APP   (taps.apps.synthetic) :: Completed 7696/10000 tasks (rate: 163.63 tasks/s, running tasks: 208)
+[2024-08-15 19:05:22.910] APP   (taps.apps.synthetic) :: Completed 10139/10000 (rate: 164.08 tasks/s)
+[2024-08-15 19:06:03.483] RUN   (taps.run) :: Finished app (name=synthetic, runtime=116.42s, tasks=10140)
