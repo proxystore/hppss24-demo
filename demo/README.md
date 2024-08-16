@@ -1,7 +1,17 @@
-## Instructions
+# Demo
 
-```python
-python3.10 -m venv venv
+This directory contains the code examples from the corresponding demo for the HPPSS24 submission.
+
+## Installation
+
+```bash
+python -m venv venv
 . venv/bin/activate
-pip install dask[distributed] mypy numpy proxystore[extensions,redis]
+pip install dask[distributed] numpy proxystore[extensions,redis]
+```
+
+## Execution
+
+```bash
+python {script}.py
 ```
