@@ -3,8 +3,13 @@ name = "proxystore"
 extract_target = true
 
 [engine.transformer.connector]
-kind = "redis"
-options = { hostname = "localhost", port = 6379}
+kind = "proxystore.ex.connectors.daos.DAOSConnector"
+
+[engine.transformer.connector.options]
+pool = "CSC249ADCD08_CNDA"
+container = "jgpaul-hppss24"
+namespace = "default"
+clear = true
 
 [engine.filter]
 name = "object-type"

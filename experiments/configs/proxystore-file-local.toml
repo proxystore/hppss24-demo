@@ -9,6 +9,3 @@ options = { store_dir = "/tmp/proxystore-cache" }
 [engine.filter]
 name = "object-type"
 patterns = [".*array", "Client", "Result", "DataFrame"]
-
-[run]
-dir_format = "runs/{name}/proxystore/{timestamp}"

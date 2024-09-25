@@ -1,6 +1,6 @@
 # Experiments
 
-## Sunspot Setup
+## Aurora/Sunspot Setup
 
 Create a conda environment with the necessary dependencies.
 ```bash
@@ -16,9 +16,21 @@ mkdir data/moldesign
 curl -o data/moldesign/QM9-search.tsv --create-dirs https://raw.githubusercontent.com/ExaWorks/molecular-design-parsl-demo/main/data/QM9-search.tsv
 ```
 
+Create a DAOS container within your allocation's pool.
+DAOS pools must be requested from support.
+```bash
+module load daos/base
+daos container create <POOL> --label <LABEL> --type PYTHON
+```
+To install the PyDAOS package into the Conda environment, you must copy the system-wide install.
+```bash
+cp -r /usr/lib64/python3.6/site-packages/pydaos $CONDA_PREFIX/lib/python3.11/site-packages
+```
+
 Scripts can be run on an interactive node.
 ```bash
-qsub -l select=1 -l walltime=02:00:00 -A CSC249ADCD08_CNDA -q workq -I
+qsub -l select=1 -l walltime=02:00:00 -A <ALLOC> -q workq -I \
+    -v DAOS_POOL=<POOL>,DAOS_CONT=<LABEL> -ldaos=default
 ```
 
 ## Running Experiments
