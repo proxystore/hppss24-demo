@@ -27,5 +27,5 @@ dependencies:
     - torchvision
     - tqdm
     - dask[distributed]==2024.7.1
-    - proxystore[extensions,redis]
-    - git+https://github.com/proxystore/taps.git@fe8149db6275dfe4467d4c98d37d37a7931f315e
+    - proxystore[extensions,redis]==0.7.1
+    - git+https://github.com/proxystore/taps.git@v0.2.1
