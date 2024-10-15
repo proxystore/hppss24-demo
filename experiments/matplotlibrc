@@ -4,16 +4,18 @@ axes.labelsize: 6
 figure.titlesize: 6
 figure.labelsize: 6
 legend.fontsize: 6
+legend.title_fontsize: 6
 xtick.labelsize: 6
 ytick.labelsize: 6
 
 # Figure parameters
 axes.linewidth: 0.5
+axes.grid: True
+axes.axisbelow: True
 grid.linewidth: 0.5
-hatch.linewidth: 0.5
-hatch.color: #000000
-lines.markersize: 3.5
-lines.linewidth: 0.7
+grid.alpha: 1.0
+lines.markersize: 6
+lines.linewidth: 1.0
 xtick.major.width: 0.5
 xtick.minor.width: 0.5
 ytick.major.width: 0.5
@@ -23,9 +25,22 @@ xtick.minor.size: 2
 ytick.major.size: 2
 ytick.minor.size: 2
 
+# Subplots
+figure.subplot.left: 0.1
+figure.subplot.right: 0.98
+figure.subplot.bottom: 0.1
+figure.subplot.top: 0.97
+figure.subplot.wspace: 0.2
+figure.subplot.hspace: 0.2
+
 # Rendering
+figure.figsize: 4, 3
 figure.dpi: 400
 savefig.dpi: 400
-savefig.format: png
+savefig.format: pdf
 savefig.bbox: tight
-savefig.pad_inches: 0
+savefig.pad_inches: 0.05
+
+# Colors
+axes.prop_cycle: cycler('color', ['4D3886', '11A579', 'D64269', 'F2B701', '3969AC', 'E68310'])
+grid.color: "#DFDFDF"
